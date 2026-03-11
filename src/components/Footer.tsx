@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,8 +9,8 @@ export default function Footer() {
           {/* Branding */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-full bg-nasa-blue flex items-center justify-center text-white font-bold text-sm">
-                M
+              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
+                <Image src="/logo.png" alt="METSAnauts Logo" width={40} height={40} className="object-contain" />
               </div>
               <span className="text-lg font-bold tracking-wide">
                 <span className="text-white">METSA</span>
