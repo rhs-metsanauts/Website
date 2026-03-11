@@ -20,40 +20,34 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-space-black/80 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-              <Image src="/logo.png" alt="METSAnauts Logo" width={40} height={40} className="object-contain" />
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-sm border-b border-border">
+      <div className="max-w-6xl mx-auto px-5">
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
+              <Image src="/logo.png" alt="METSAnauts" width={32} height={32} className="object-contain" />
             </div>
-            <span className="text-lg font-bold tracking-wide">
-              <span className="text-white">METSA</span>
-              <span className="text-accent-cyan">nauts</span>
-            </span>
+            <span className="text-sm font-semibold text-text-bright tracking-wide">METSAnauts</span>
           </Link>
 
-          {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm text-lunar-silver hover:text-white hover:bg-white/5 rounded-md transition-colors"
+                className="px-3 py-1.5 text-[13px] text-text-muted hover:text-text-bright rounded transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 text-lunar-silver hover:text-white"
+            className="lg:hidden p-1.5 text-text-muted hover:text-text-bright"
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {open ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -64,16 +58,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-space-dark/95 backdrop-blur-md border-b border-white/5">
-          <div className="px-4 py-3 space-y-1">
+        <div className="lg:hidden bg-surface border-b border-border">
+          <div className="px-5 py-3 space-y-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2 text-sm text-lunar-silver hover:text-white hover:bg-white/5 rounded-md transition-colors"
+                className="block px-3 py-2 text-sm text-text-muted hover:text-text-bright rounded transition-colors"
               >
                 {link.label}
               </Link>

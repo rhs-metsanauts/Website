@@ -1,102 +1,65 @@
-import SectionHeading from "@/components/SectionHeading";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export default function MissionPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative py-24 starfield">
-        <div className="absolute inset-0 bg-gradient-to-b from-space-black/80 to-space-black" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">Our Mission</h1>
-          <p className="text-lg text-lunar-silver/60">HERA Rover & BothScape Simulation Project</p>
-        </div>
-      </section>
+    <div className="py-16 sm:py-24 px-5">
+      <div className="max-w-3xl mx-auto">
+        <p className="text-xs text-text-muted uppercase tracking-widest mb-2">Mission</p>
+        <h1 className="text-3xl font-bold text-text-bright mb-8">Problem Statement & Goals</h1>
 
-      {/* Problem Statement */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading title="Problem Statement" />
-          <div className="bg-space-gray/50 border border-white/5 rounded-xl p-8 md:p-10">
-            <p className="text-lunar-silver/80 leading-relaxed text-lg">
-              The HERA program at NASA is part of the Artemis II series of missions that plan to launch
-              within the next 1&ndash;2 years. Our challenge is to aid the astronauts&mdash;teachers,
-              geologists, and specialists&mdash;on these missions by designing a set of 4 rovers to
-              traverse the harsh environments of the Moon and Mars, alongside a model landscape that
-              accurately simulates those extraterrestrial conditions.
-            </p>
-            <p className="text-lunar-silver/60 leading-relaxed mt-4">
-              In practice, these rovers would be used to scout and map the terrain, as well as for
-              the mining of precious metals.
-            </p>
-          </div>
+        <div className="space-y-4 mb-12">
+          <p className="text-text leading-relaxed">
+            The HERA program at NASA is part of the Artemis II series of missions that plan to launch
+            within the next 1&ndash;2 years. Our challenge is to aid the astronauts&mdash;teachers,
+            geologists, and specialists&mdash;on these missions by designing a set of 4 rovers to
+            traverse the harsh environments of the Moon and Mars, alongside a model landscape that
+            accurately simulates those extraterrestrial conditions.
+          </p>
+          <p className="text-text-muted leading-relaxed">
+            In practice, these rovers would be used to scout and map the terrain, as well as for
+            the mining of precious metals.
+          </p>
         </div>
-      </section>
 
-      {/* Goals */}
-      <section className="py-20 bg-space-dark px-4">
-        <div className="max-w-5xl mx-auto">
-          <SectionHeading title="Our Goals" subtitle="What we aim to achieve with this project" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "🌑",
-                title: "Lunar Environment",
-                desc: "Build an accurate 8 ft × 8 ft lunar environment where rovers can navigate and carry out tasks.",
-              },
-              {
-                icon: "🤖",
-                title: "Multi-Mission Rover",
-                desc: "Create a physical rover capable of carrying out mining, support, and reconnaissance missions.",
-              },
-              {
-                icon: "🧪",
-                title: "Performance Testing",
-                desc: "Test the performance of rovers on mock Lunar and Martian conditions to validate design choices.",
-              },
-              {
-                icon: "🚀",
-                title: "Mission Immersion",
-                desc: "Immerse astronauts into the experience of a mission with realistic simulation environments.",
-              },
-              {
-                icon: "🎮",
-                title: "User-Friendly Control",
-                desc: "Make a user-friendly way to control and adjust the rover, accessible to non-technical users.",
-              },
-            ].map((goal) => (
-              <div
-                key={goal.title}
-                className="p-6 rounded-xl bg-space-gray/50 border border-white/5 card-hover"
-              >
-                <div className="text-3xl mb-4">{goal.icon}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{goal.title}</h3>
-                <p className="text-sm text-lunar-silver/60 leading-relaxed">{goal.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        <h2 className="text-lg font-semibold text-text-bright mb-4">Goals</h2>
 
-      {/* Mission Context */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <ul className="space-y-3 mb-12">
+          {[
+            "Build an accurate 8 ft × 8 ft lunar environment where rovers can navigate and carry out tasks",
+            "Create a physical rover capable of mining, support, and reconnaissance missions",
+            "Test rover performance on mock Lunar and Martian conditions",
+            "Immerse astronauts into a realistic mission experience",
+            "Make a user-friendly way to control and adjust the rover",
+          ].map((goal) => (
+            <li key={goal} className="flex gap-3 text-sm text-text leading-relaxed">
+              <span className="mt-2 w-1 h-1 rounded-full bg-blue shrink-0" />
+              {goal}
+            </li>
+          ))}
+        </ul>
+
+        <hr className="border-border mb-12" />
+
+        <div className="grid sm:grid-cols-2 gap-8 mb-12">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4">NASA HUNCH &amp; HERA</h3>
-            <p className="text-lunar-silver/70 leading-relaxed mb-4">
-              NASA HUNCH (High School Students United with NASA to Create Hardware) connects student
-              teams with real NASA challenges. The HERA (Human Exploration Research Analog) is a
-              three-story habitat at Johnson Space Center used to simulate deep-space missions.
-            </p>
-            <p className="text-lunar-silver/70 leading-relaxed">
-              Our team operates with dedicated subteams for engineering design, software systems,
-              crater modeling, documentation, and mission operations&mdash;functioning as an applied
-              R&D unit building real hardware for NASA&apos;s exploration programs.
+            <h3 className="text-sm font-semibold text-text-bright mb-2">NASA HUNCH</h3>
+            <p className="text-sm text-text-muted leading-relaxed">
+              High School Students United with NASA to Create Hardware. Connects student
+              teams with real NASA engineering challenges, providing hands-on experience in
+              aerospace design and fabrication.
             </p>
           </div>
-          <ImagePlaceholder label="HERA Habitat / NASA HUNCH Logo" />
+          <div>
+            <h3 className="text-sm font-semibold text-text-bright mb-2">HERA</h3>
+            <p className="text-sm text-text-muted leading-relaxed">
+              The Human Exploration Research Analog at Johnson Space Center simulates deep-space
+              missions. Our rovers and terrain are designed to operate within HERA mission scenarios.
+            </p>
+          </div>
         </div>
-      </section>
-    </>
+
+        <ImagePlaceholder label="HERA habitat / NASA HUNCH program photo" />
+      </div>
+    </div>
   );
 }

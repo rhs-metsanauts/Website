@@ -1,213 +1,129 @@
-import SectionHeading from "@/components/SectionHeading";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export default function RoverSystemsPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative py-24 starfield">
-        <div className="absolute inset-0 bg-gradient-to-b from-space-black/80 to-space-black" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">Rover Systems</h1>
-          <p className="text-lg text-lunar-silver/60">Engineering overview of our lunar/Martian exploration rovers</p>
+    <div className="py-16 sm:py-24 px-5">
+      <div className="max-w-3xl mx-auto">
+        <p className="text-xs text-text-muted uppercase tracking-widest mb-2">Systems</p>
+        <h1 className="text-3xl font-bold text-text-bright mb-3">Rover Systems</h1>
+        <p className="text-text-muted mb-10">Mechanical, electrical, and software breakdown of the rover fleet.</p>
+
+        <ImagePlaceholder label="Rover CAD render or assembled photo" className="mb-12" />
+
+        {/* Design features */}
+        <h2 className="text-lg font-semibold text-text-bright mb-4">Key design features</h2>
+        <div className="overflow-hidden border border-border rounded-lg mb-12">
+          <table className="w-full text-sm">
+            <tbody>
+              {[
+                ["Suspension", "Rocker-bogie with active solar tracking. Handles harsh terrain while keeping components upright."],
+                ["Wheels", "Half-tread system for increased grip on coarse regolith and rocky terrain."],
+                ["Solar", "Underside-mounted panels with 60° rotation to maximize capture at low sun angles."],
+                ["Motors", "6 independently-controlled DC motors, one per wheel, each with a dedicated controller."],
+                ["Compute", "Raspberry Pi 4B running the control system and sensor processing."],
+                ["Claw", "Robotic sample collection arm with camera for precise remote guidance."],
+              ].map(([label, desc]) => (
+                <tr key={label} className="border-b border-border last:border-0">
+                  <td className="py-3 px-4 text-text-bright font-medium whitespace-nowrap align-top">{label}</td>
+                  <td className="py-3 px-4 text-text-muted">{desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </section>
 
-      {/* Overview */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeading title="Systems Overview" subtitle="Key design features powering our rover fleet" />
+        <hr className="border-border mb-12" />
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {[
-              {
-                title: "Rocker-Bogie Suspension",
-                desc: "Features a base with active solar tracking. The flexible suspension handles harsh terrain changes while keeping the rover and its components upright and unharmed.",
-              },
-              {
-                title: "Half-Tread Wheel System",
-                desc: "Increased surface grip for navigating coarse regolith and rocky terrain. Provides greater stability over traditional wheel systems.",
-              },
-              {
-                title: "Solar Panel Charging",
-                desc: "Highly flexible chassis allows simple and efficient recharging via underside solar panels with 60-degree rotation to maximize solar ray capture.",
-              },
-            ].map((feature) => (
-              <div key={feature.title} className="p-6 rounded-xl bg-space-gray/50 border border-white/5 card-hover">
-                <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-sm text-lunar-silver/60 leading-relaxed">{feature.desc}</p>
-              </div>
-            ))}
+        {/* Communication */}
+        <h2 className="text-lg font-semibold text-text-bright mb-2">Communication systems</h2>
+        <p className="text-sm text-text-muted mb-6">
+          Three protocols cover different ranges and use cases. The system falls back automatically
+          from WiFi to LoRa when the rover moves out of range.
+        </p>
+
+        <div className="space-y-1 mb-8">
+          <div className="flex items-start gap-4 p-3 rounded-md bg-surface">
+            <span className="text-xs font-mono text-text-muted w-14 shrink-0 pt-0.5">WiFi</span>
+            <p className="text-sm text-text">Local area network hosted on a laptop. No internet needed. Primary link for close operations.</p>
           </div>
-
-          {/* Key specs */}
-          <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto mb-16">
-            {[
-              { value: "6", label: "Independent Motors" },
-              { value: "RPi", label: "Control System" },
-              { value: "Claw", label: "Sample Collection" },
-            ].map((spec) => (
-              <div key={spec.label} className="text-center p-4 rounded-lg bg-nasa-blue/10 border border-nasa-blue/20">
-                <div className="text-2xl font-black text-accent-cyan">{spec.value}</div>
-                <div className="text-xs text-lunar-silver/50 mt-1">{spec.label}</div>
-              </div>
-            ))}
+          <div className="flex items-start gap-4 p-3 rounded-md">
+            <span className="text-xs font-mono text-text-muted w-14 shrink-0 pt-0.5">LoRa</span>
+            <p className="text-sm text-text">Long-range radio fallback up to ~1 km. Used when WiFi signal drops.</p>
           </div>
-
-          <ImagePlaceholder label="Rover CAD Render / Exploded View" className="max-w-3xl mx-auto" />
+          <div className="flex items-start gap-4 p-3 rounded-md bg-surface">
+            <span className="text-xs font-mono text-text-muted w-14 shrink-0 pt-0.5">BLE</span>
+            <p className="text-sm text-text">Bluetooth for close-up video transfer from the claw-mounted camera.</p>
+          </div>
         </div>
-      </section>
 
-      {/* Communication Systems */}
-      <section className="py-20 bg-space-dark px-4">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeading title="Communication Systems" subtitle="Multi-protocol wireless control architecture" />
+        <p className="text-sm text-text-muted mb-12 leading-relaxed">
+          The control flow runs: <span className="text-text">Laptop App → LoRa Transmitter → LoRa Receiver → Rover.</span> Commands
+          are packaged for reliable transmission, sent wirelessly, and the rover receives and acts
+          on them automatically. The app is designed for astronauts with no technical knowledge.
+        </p>
 
-          {/* Control Flow Diagram */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
-            {[
-              { label: "Laptop App", sub: "Sends Command" },
-              { label: "LoRa Transmitter", sub: "Packages Signal" },
-              { label: "LoRa Receiver", sub: "Decodes Signal" },
-              { label: "Rover", sub: "Executes Command" },
-            ].map((step, i) => (
-              <div key={step.label} className="flex items-center gap-4">
-                <div className="text-center p-4 rounded-xl bg-space-gray border border-white/10 min-w-[140px]">
-                  <div className="text-sm font-bold text-white">{step.label}</div>
-                  <div className="text-xs text-lunar-silver/50 mt-1">{step.sub}</div>
-                </div>
-                {i < 3 && (
-                  <svg className="w-6 h-6 text-accent-cyan hidden md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                )}
-              </div>
-            ))}
+        <hr className="border-border mb-12" />
+
+        {/* Mobility */}
+        <h2 className="text-lg font-semibold text-text-bright mb-4">Mobility & suspension</h2>
+        <div className="grid sm:grid-cols-2 gap-8 mb-12">
+          <div>
+            <h3 className="text-sm font-medium text-text-bright mb-2">6-wheel drive</h3>
+            <ul className="space-y-2">
+              {[
+                "Full control across loose, uneven terrain",
+                "Half-tread design for stability on granular surfaces",
+                "Each wheel has its own dedicated controller",
+              ].map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-text-muted">
+                  <span className="mt-2 w-1 h-1 rounded-full bg-border shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-
-          {/* Communication Stack */}
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {[
-              {
-                protocol: "Bluetooth",
-                color: "from-blue-500/20 to-blue-600/5",
-                borderColor: "border-blue-500/20",
-                desc: "Close-up video transfer from the claw-mounted camera for precise operation guidance.",
-              },
-              {
-                protocol: "LoRa",
-                color: "from-purple-500/20 to-purple-600/5",
-                borderColor: "border-purple-500/20",
-                desc: "Long-range communication when other links are unavailable. Reliable up to ~1 km distance.",
-              },
-              {
-                protocol: "LAN (WiFi)",
-                color: "from-teal-500/20 to-teal-600/5",
-                borderColor: "border-teal-500/20",
-                desc: "A local wireless network that keeps the rover reliably connected with no internet needed.",
-              },
-            ].map((comm) => (
-              <div
-                key={comm.protocol}
-                className={`p-6 rounded-xl bg-gradient-to-br ${comm.color} border ${comm.borderColor} card-hover`}
-              >
-                <h3 className="text-lg font-bold text-white mb-3">{comm.protocol}</h3>
-                <p className="text-sm text-lunar-silver/60 leading-relaxed">{comm.desc}</p>
-              </div>
-            ))}
+          <div>
+            <h3 className="text-sm font-medium text-text-bright mb-2">Suspension</h3>
+            <ul className="space-y-2">
+              {[
+                "Low center of gravity for balance on slopes",
+                "Front wheels climb obstacles, rear holds steady",
+                "Even weight distribution across all wheels",
+                "Adjusts dynamically for terrain",
+              ].map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-text-muted">
+                  <span className="mt-2 w-1 h-1 rounded-full bg-border shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
 
-          <div className="bg-space-gray/30 border border-white/5 rounded-xl p-6 max-w-3xl mx-auto text-center">
-            <p className="text-lunar-silver/70 text-sm leading-relaxed">
-              Astronaut-friendly app with intuitive interface for sending predefined and
-              automatically generated commands without technical knowledge. An AI-powered
-              interface dynamically generates code for easier operation.
+        <hr className="border-border mb-12" />
+
+        {/* Claw & LDR */}
+        <div className="grid sm:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-lg font-semibold text-text-bright mb-2">Robotic claw</h2>
+            <p className="text-sm text-text-muted leading-relaxed mb-3">
+              Collects loose soil and rocks for mining and sample collection tasks.
+              A camera mounted on the claw gives the operator a clear view for precise
+              positioning. Controlled via LoRa or WiFi depending on range.
             </p>
+            <ImagePlaceholder label="Claw close-up" />
+          </div>
+          <div>
+            <h2 className="text-lg font-semibold text-text-bright mb-2">LDR solar tracking</h2>
+            <p className="text-sm text-text-muted leading-relaxed mb-3">
+              A light-dependent resistor on the underside reads ambient light levels. The
+              Raspberry Pi processes readings to find the strongest direction, then the rover
+              repositions itself to maximize solar panel exposure.
+            </p>
+            <ImagePlaceholder label="LDR system diagram" />
           </div>
         </div>
-      </section>
-
-      {/* Mobility & Claw */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeading title="Mobility & Claw System" />
-
-          <div className="grid md:grid-cols-2 gap-10 mb-16">
-            {/* 6-Wheel Drive */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">6-Wheel Drive with Half-Tread System</h3>
-              <ul className="space-y-3">
-                {[
-                  "6 independently-motored wheels give the rover full control across loose, uneven terrain",
-                  "Half-tread design keeps it stable and grounded on granular surfaces",
-                  "Each wheel is managed by its own dedicated controller for precise movement",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-lunar-silver/70">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-cyan shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Suspension */}
-            <div>
-              <h3 className="text-xl font-bold text-white mb-4">Suspension System</h3>
-              <ul className="space-y-3">
-                {[
-                  "Low center of gravity keeps the rover balanced on slopes and uneven surfaces",
-                  "Front wheels climb obstacles while rear wheels hold steady",
-                  "Weight distributed evenly — no single point takes too much strain",
-                  "High ground clearance increases maneuverability",
-                  "Suspension adjusts dynamically for the terrain",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-lunar-silver/70">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent-cyan shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Robotic Claw & LDR */}
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="p-6 rounded-xl bg-space-gray/50 border border-white/5">
-              <h3 className="text-xl font-bold text-white mb-4">Robotic Claw</h3>
-              <ul className="space-y-3">
-                {[
-                  "Collects loose soil and rocks to simulate mining and sample collection tasks",
-                  "Camera mounted on the claw for precise positioning and control",
-                  "Controlled remotely via LoRa or WiFi interface depending on range",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-lunar-silver/70">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-lunar-gold shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <ImagePlaceholder label="Robotic Claw Close-up" className="mt-6" />
-            </div>
-
-            <div className="p-6 rounded-xl bg-space-gray/50 border border-white/5">
-              <h3 className="text-xl font-bold text-white mb-4">LDR Solar Tracking System</h3>
-              <ul className="space-y-3">
-                {[
-                  "Light Dependent Resistor on the underside continuously reads surrounding light levels",
-                  "Raspberry Pi processes readings to find the strongest light direction",
-                  "Rover repositions itself to maximize solar panel exposure automatically",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-lunar-silver/70">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-lunar-gold shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <ImagePlaceholder label="LDR System Diagram" className="mt-6" />
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

@@ -7,9 +7,8 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "METSAnauts | NASA HUNCH - HERA Rover & BothScape Project",
-  description:
-    "A NASA HUNCH engineering team from Ranchview High School specializing in rover development, autonomous systems, and lunar environment simulation for the HERA program.",
+  title: "METSAnauts — HERA Rover & BothScape",
+  description: "NASA HUNCH engineering team building rovers and terrain simulations for the HERA program.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -17,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
         <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="pt-14">{children}</main>
         <Footer />
       </body>
     </html>

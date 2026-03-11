@@ -1,81 +1,40 @@
-import SectionHeading from "@/components/SectionHeading";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-
-const galleryCategories = [
-  {
-    title: "Rover Builds",
-    items: [
-      "V1 Rover Prototype",
-      "V2 Rover Assembly",
-      "Rocker-Bogie Detail",
-      "Half-Tread Wheels Close-up",
-      "Robotic Claw Mechanism",
-      "Electronics Bay",
-    ],
-  },
-  {
-    title: "BothScape Terrain",
-    items: [
-      "Full Landscape Overview",
-      "Moon Region - Shackleton Crater",
-      "Mars Region - Ancient Terrain",
-      "Terrain Section Detail",
-      "Regolith Application",
-      "Rover Testing on Terrain",
-    ],
-  },
-  {
-    title: "Communication & Software",
-    items: [
-      "LoRa Module Setup",
-      "Control App Interface",
-      "Raspberry Pi Wiring",
-      "Command Flow Testing",
-    ],
-  },
-  {
-    title: "Team & Events",
-    items: [
-      "Team Photo",
-      "Workshop Sessions",
-      "NASA HUNCH Meeting",
-      "FDR Preparation",
-    ],
-  },
-];
 
 export default function GalleryPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative py-24 starfield">
-        <div className="absolute inset-0 bg-gradient-to-b from-space-black/80 to-space-black" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">Gallery</h1>
-          <p className="text-lg text-lunar-silver/60">Project photos, renders, and documentation</p>
-        </div>
-      </section>
+    <div className="py-16 sm:py-24 px-5">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-xs text-text-muted uppercase tracking-widest mb-2">Media</p>
+        <h1 className="text-3xl font-bold text-text-bright mb-10">Gallery</h1>
 
-      {/* Gallery Sections */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-20">
-          {galleryCategories.map((category) => (
-            <div key={category.title}>
-              <SectionHeading title={category.title} align="left" />
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {category.items.map((item) => (
-                  <ImagePlaceholder
-                    key={item}
-                    label={item}
-                    aspectRatio="aspect-square"
-                    className="rounded-lg"
-                  />
-                ))}
-              </div>
-            </div>
+        <h2 className="text-base font-semibold text-text-bright mb-4">Rover builds</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-12">
+          {["V1 Prototype", "V2 Assembly", "Rocker-Bogie Detail", "Half-Tread Wheels", "Claw Mechanism", "Electronics Bay"].map((label) => (
+            <ImagePlaceholder key={label} label={label} aspectRatio="aspect-square" className="rounded" />
           ))}
         </div>
-      </section>
-    </>
+
+        <h2 className="text-base font-semibold text-text-bright mb-4">BothScape terrain</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-12">
+          {["Full Landscape", "Moon Region", "Mars Region", "Section Detail", "Regolith Application", "Rover on Terrain"].map((label) => (
+            <ImagePlaceholder key={label} label={label} aspectRatio="aspect-square" className="rounded" />
+          ))}
+        </div>
+
+        <h2 className="text-base font-semibold text-text-bright mb-4">Communication & software</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-12">
+          {["LoRa Module", "Control App UI", "RPi Wiring", "Command Testing"].map((label) => (
+            <ImagePlaceholder key={label} label={label} aspectRatio="aspect-square" className="rounded" />
+          ))}
+        </div>
+
+        <h2 className="text-base font-semibold text-text-bright mb-4">Team & events</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {["Team Photo", "Workshop", "NASA HUNCH Meeting", "FDR Prep"].map((label) => (
+            <ImagePlaceholder key={label} label={label} aspectRatio="aspect-square" className="rounded" />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

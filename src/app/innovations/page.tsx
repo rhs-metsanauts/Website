@@ -1,79 +1,72 @@
-import SectionHeading from "@/components/SectionHeading";
-
-const innovations = [
-  {
-    num: "01",
-    title: "Solar Panel Placement",
-    desc: "The solar panels are mounted on the bottom of the rover. Due to the flexible rocker-bogie suspension system, they can tilt upward to catch sunlight even when the sun sits low on the horizon — like on the lunar south pole.",
-    color: "from-yellow-500/20 to-yellow-600/5",
-    border: "border-yellow-500/20",
-  },
-  {
-    num: "02",
-    title: "LoRa Communication Fallback",
-    desc: "Lets astronauts send basic commands to the rover over distances up to ~1 km. This acts as a reliable backup when the rover is too far for a WiFi signal to reach.",
-    color: "from-purple-500/20 to-purple-600/5",
-    border: "border-purple-500/20",
-  },
-  {
-    num: "03",
-    title: "Astronaut-Friendly UI",
-    desc: "An intuitive web app lets astronauts control the rover over WiFi or LoRa with no technical knowledge required. An AI-powered interface dynamically generates code, allowing astronauts to use the program more easily.",
-    color: "from-cyan-500/20 to-cyan-600/5",
-    border: "border-cyan-500/20",
-  },
-  {
-    num: "04",
-    title: "LAN Connectivity",
-    desc: "A laptop hosts a local area network, allowing the rover to connect directly with no internet needed — keeping communication fast and reliable in any environment.",
-    color: "from-green-500/20 to-green-600/5",
-    border: "border-green-500/20",
-  },
-  {
-    num: "05",
-    title: "Half-Tread System",
-    desc: "The half-tread system increases grip compared to just 6 independent wheels, helping the rover stay stable and traverse uneven terrain on both lunar and Martian surfaces.",
-    color: "from-orange-500/20 to-orange-600/5",
-    border: "border-orange-500/20",
-  },
-  {
-    num: "06",
-    title: "Powered Suspension",
-    desc: "The rover's flexible suspension lets it shift and adjust its body to match terrain or angle towards the sun, making the rover more adaptable and energy-efficient.",
-    color: "from-blue-500/20 to-blue-600/5",
-    border: "border-blue-500/20",
-  },
-];
-
 export default function InnovationsPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative py-24 starfield">
-        <div className="absolute inset-0 bg-gradient-to-b from-space-black/80 to-space-black" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">Key Innovations</h1>
-          <p className="text-lg text-lunar-silver/60">What sets our rover apart</p>
-        </div>
-      </section>
+    <div className="py-16 sm:py-24 px-5">
+      <div className="max-w-3xl mx-auto">
+        <p className="text-xs text-text-muted uppercase tracking-widest mb-2">Design</p>
+        <h1 className="text-3xl font-bold text-text-bright mb-3">Key Innovations</h1>
+        <p className="text-text-muted mb-10">What makes our approach different from a standard rover build.</p>
 
-      {/* Innovations Grid */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {innovations.map((item) => (
-              <div
-                key={item.num}
-                className={`p-6 rounded-xl bg-gradient-to-br ${item.color} border ${item.border} card-hover`}
-              >
-                <div className="text-4xl font-black text-white/10 mb-2">{item.num}</div>
-                <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-sm text-lunar-silver/70 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-base font-semibold text-text-bright mb-1">Bottom-mounted solar panels</h2>
+            <p className="text-sm text-text-muted leading-relaxed">
+              The panels sit on the underside of the rover. Because the rocker-bogie suspension is
+              flexible, the panels can tilt upward to catch sunlight even when the sun sits low on
+              the horizon — like on the lunar south pole. This is the opposite of where most designs
+              place them, and it works because of how the suspension geometry shifts.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-base font-semibold text-text-bright mb-1">LoRa fallback communication</h2>
+            <p className="text-sm text-text-muted leading-relaxed">
+              When the rover moves beyond WiFi range (which happens quickly in field conditions),
+              it automatically falls back to LoRa. This gives astronauts basic command capability
+              up to ~1 km without any manual switching. LoRa is low-power and doesn&apos;t need
+              infrastructure — just a transmitter module and a receiver.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-base font-semibold text-text-bright mb-1">Astronaut-friendly control app</h2>
+            <p className="text-sm text-text-muted leading-relaxed">
+              The rover is controlled through a web app designed for people who aren&apos;t engineers.
+              Predefined commands cover common tasks. There&apos;s also an AI-powered interface that
+              can generate control code dynamically — an astronaut describes what they want the rover
+              to do in plain language, and the system writes the command.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-base font-semibold text-text-bright mb-1">Local-only networking</h2>
+            <p className="text-sm text-text-muted leading-relaxed">
+              A laptop hosts a LAN that the rover connects to directly. No internet dependency.
+              This matters because HERA simulations don&apos;t have external network access, and
+              real lunar missions obviously won&apos;t either.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-base font-semibold text-text-bright mb-1">Half-tread wheel system</h2>
+            <p className="text-sm text-text-muted leading-relaxed">
+              Rather than bare wheels or full tank treads, we use a half-tread design. It gives
+              meaningfully more grip than wheels alone (important on loose regolith) without the
+              weight and complexity penalty of full treads. Each of the 6 wheels is independently
+              motored.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-base font-semibold text-text-bright mb-1">Powered suspension</h2>
+            <p className="text-sm text-text-muted leading-relaxed">
+              The suspension isn&apos;t just passive — it actively adjusts the rover&apos;s body
+              position. It can shift to match terrain angles or orient the chassis toward the sun
+              for better solar charging. This dual purpose (terrain adaptation + power optimization)
+              comes from a single mechanical system.
+            </p>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

@@ -3,75 +3,58 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-space-dark border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Branding */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-                <Image src="/logo.png" alt="METSAnauts Logo" width={40} height={40} className="object-contain" />
+    <footer className="border-t border-border">
+      <div className="max-w-6xl mx-auto px-5 py-10">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="max-w-xs">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                <Image src="/logo.png" alt="METSAnauts" width={28} height={28} className="object-contain" />
               </div>
-              <span className="text-lg font-bold tracking-wide">
-                <span className="text-white">METSA</span>
-                <span className="text-accent-cyan">nauts</span>
-              </span>
+              <span className="text-sm font-semibold text-text-bright">METSAnauts</span>
             </div>
-            <p className="text-sm text-lunar-silver/70 leading-relaxed">
-              A NASA HUNCH engineering team from Ranchview High School, Irving TX.
-              Specializing in rover development, autonomous systems, and lunar environment simulation.
+            <p className="text-sm text-text-muted leading-relaxed">
+              NASA HUNCH engineering team. Ranchview High School, Irving TX.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navigation</h4>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { href: "/mission", label: "Mission" },
-                { href: "/rover-systems", label: "Rover Systems" },
-                { href: "/bothscape", label: "BothScape" },
-                { href: "/innovations", label: "Innovations" },
-                { href: "/budget-timeline", label: "Budget & Timeline" },
-                { href: "/research", label: "Research" },
-                { href: "/gallery", label: "Gallery" },
-                { href: "/team", label: "Team" },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-lunar-silver/70 hover:text-accent-cyan transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+          <div className="flex gap-12">
+            <div>
+              <p className="text-xs font-medium text-text-muted uppercase tracking-wider mb-3">Pages</p>
+              <div className="flex flex-col gap-1.5">
+                {[
+                  { href: "/mission", label: "Mission" },
+                  { href: "/rover-systems", label: "Rover Systems" },
+                  { href: "/bothscape", label: "BothScape" },
+                  { href: "/innovations", label: "Innovations" },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} className="text-sm text-text-muted hover:text-text-bright transition-colors">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Program */}
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Program</h4>
-            <p className="text-sm text-lunar-silver/70 leading-relaxed">
-              NASA HUNCH (High School Students United with NASA to Create Hardware)<br />
-              HERA Rover & BothScape Simulation Project<br />
-              Ranchview High School, Irving, TX
-            </p>
-            <div className="mt-4 flex items-center gap-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-accent-teal animate-pulse" />
-              <span className="text-xs text-lunar-silver/50">FDR 2026</span>
+            <div>
+              <p className="text-xs font-medium text-text-muted uppercase tracking-wider mb-3">More</p>
+              <div className="flex flex-col gap-1.5">
+                {[
+                  { href: "/budget-timeline", label: "Budget & Timeline" },
+                  { href: "/research", label: "Research" },
+                  { href: "/gallery", label: "Gallery" },
+                  { href: "/team", label: "Team" },
+                ].map((link) => (
+                  <Link key={link.href} href={link.href} className="text-sm text-text-muted hover:text-text-bright transition-colors">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="section-divider mt-8 mb-6" />
-
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-lunar-silver/40">
-            &copy; 2026 METSAnauts &mdash; NASA HUNCH Program
-          </p>
-          <p className="text-xs text-lunar-silver/40">
-            Lunar & Martian Surface Exploration
-          </p>
+        <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row justify-between gap-2">
+          <p className="text-xs text-text-muted">METSAnauts &mdash; NASA HUNCH Program, 2026</p>
+          <p className="text-xs text-text-muted">HERA Rover & BothScape Simulation Project</p>
         </div>
       </div>
     </footer>
