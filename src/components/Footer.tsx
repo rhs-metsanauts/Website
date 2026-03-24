@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="max-w-sm">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden">
+              <div className="w-8 h-8 flex items-center justify-center">
                 <Image src="/logo.png" alt="METSAnauts" width={32} height={32} className="object-contain" />
               </div>
               <span className="text-sm font-semibold text-text-bright">METSAnauts</span>

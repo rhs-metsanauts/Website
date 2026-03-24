@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden group-hover:border-amber/30 transition-colors">
+            <div className="w-9 h-9 flex items-center justify-center group-hover:opacity-80 transition-opacity">
               <Image src="/logo.png" alt="METSAnauts" width={36} height={36} className="object-contain" />
             </div>
             <div className="flex items-center gap-2">

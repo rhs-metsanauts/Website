@@ -22,7 +22,7 @@ export default function Home() {
 
           <FadeIn delay={80}>
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden">
+              <div className="w-14 h-14 flex items-center justify-center">
                 <Image src="/logo.png" alt="METSAnauts" width={56} height={56} className="object-contain" />
               </div>
               <div>
