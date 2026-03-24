@@ -16,9 +16,9 @@ export default function TeamPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label">Team</span>
+            <span className="tech-label !text-xs">Team</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Team</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Team</h1>
           <p className="text-text-muted mb-12">
             Ranchview High School, Irving TX &mdash; NASA HUNCH Program, 2026
           </p>
@@ -57,7 +57,7 @@ export default function TeamPage() {
         <FadeIn>
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="bg-surface rounded-xl p-6 border border-border">
-              <span className="tech-label !text-[9px] text-amber/70 mb-2 block">Program</span>
+              <span className="tech-label !text-[11px] text-amber/70 mb-2 block">Program</span>
               <h3 className="font-semibold text-text-bright mb-2">NASA HUNCH</h3>
               <p className="text-sm text-text-muted leading-relaxed">
                 High School Students United with NASA to Create Hardware. Connects student
@@ -65,7 +65,7 @@ export default function TeamPage() {
               </p>
             </div>
             <div className="bg-surface rounded-xl p-6 border border-border">
-              <span className="tech-label !text-[9px] text-amber/70 mb-2 block">Facility</span>
+              <span className="tech-label !text-[11px] text-amber/70 mb-2 block">Facility</span>
               <h3 className="font-semibold text-text-bright mb-2">HERA Program</h3>
               <p className="text-sm text-text-muted leading-relaxed">
                 The Human Exploration Research Analog at Johnson Space Center simulates

@@ -8,9 +8,9 @@ export default function MissionPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label">Section 01</span>
+            <span className="tech-label !text-xs">Section 01</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Mission & Goals</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Mission & Goals</h1>
           <p className="text-lg text-text-muted leading-relaxed mb-6">
             What we&apos;re solving for and why it matters.
           </p>
@@ -53,7 +53,7 @@ export default function MissionPage() {
         <FadeIn delay={200}>
           <div className="grid sm:grid-cols-2 gap-6 mb-14">
             <div className="bg-surface rounded-xl p-6 border border-border">
-              <span className="tech-label !text-[9px] text-amber/70 mb-2 block">Program</span>
+              <span className="tech-label !text-[11px] text-amber/70 mb-2 block">Program</span>
               <h3 className="font-semibold text-text-bright mb-2">NASA HUNCH</h3>
               <p className="text-sm text-text-muted leading-relaxed">
                 High School Students United with NASA to Create Hardware. Connects student
@@ -62,7 +62,7 @@ export default function MissionPage() {
               </p>
             </div>
             <div className="bg-surface rounded-xl p-6 border border-border">
-              <span className="tech-label !text-[9px] text-amber/70 mb-2 block">Facility</span>
+              <span className="tech-label !text-[11px] text-amber/70 mb-2 block">Facility</span>
               <h3 className="font-semibold text-text-bright mb-2">HERA</h3>
               <p className="text-sm text-text-muted leading-relaxed">
                 The Human Exploration Research Analog at Johnson Space Center simulates deep-space

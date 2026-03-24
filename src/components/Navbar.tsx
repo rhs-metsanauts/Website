@@ -42,7 +42,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[15px] font-semibold text-text-bright">METSAnauts</span>
-              <span className="hidden sm:inline-block tech-label !text-[9px] px-1.5 py-0.5 rounded border border-amber/20 bg-amber-soft text-amber">
+              <span className="hidden sm:inline-block tech-label !text-[11px] px-2 py-0.5 rounded border border-amber/20 bg-amber-soft text-amber">
                 NASA&nbsp;HUNCH
               </span>
             </div>

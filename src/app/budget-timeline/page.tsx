@@ -8,9 +8,9 @@ export default function BudgetTimelinePage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label">Section 05</span>
+            <span className="tech-label !text-xs">Section 05</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-12 tracking-tight">Budget & Timeline</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-12 tracking-tight">Budget & Timeline</h1>
         </FadeIn>
 
         <FadeIn delay={100}>

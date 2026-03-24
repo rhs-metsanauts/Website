@@ -40,9 +40,9 @@ export default function InnovationsPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label">Section 04</span>
+            <span className="tech-label !text-xs">Section 04</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Key Innovations</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Key Innovations</h1>
           <p className="text-text-muted mb-12">What makes our approach different from a standard rover build.</p>
         </FadeIn>
 
@@ -50,7 +50,7 @@ export default function InnovationsPage() {
           {innovations.map((item, i) => (
             <FadeIn key={item.title} delay={i * 80}>
               <div className="bg-surface rounded-xl p-6 border border-border card-hover">
-                <span className="tech-label !text-[9px] text-amber/70 mb-2 block">{item.tag}</span>
+                <span className="tech-label !text-[11px] text-amber/70 mb-2 block">{item.tag}</span>
                 <h2 className="font-semibold text-text-bright mb-2">{item.title}</h2>
                 <p className="text-sm text-text-muted leading-relaxed">{item.desc}</p>
               </div>

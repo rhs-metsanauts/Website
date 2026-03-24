@@ -8,9 +8,9 @@ export default function GalleryPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label">Gallery</span>
+            <span className="tech-label !text-xs">Gallery</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
         </FadeIn>
 
         {[
@@ -22,7 +22,7 @@ export default function GalleryPage() {
           <FadeIn key={section.title} delay={si * 100}>
             <div className="mb-14">
               <div className="flex items-center gap-3 mb-5">
-                <span className="tech-label !text-[9px] text-amber/70">{section.tag}</span>
+                <span className="tech-label !text-[11px] text-amber/70">{section.tag}</span>
                 <h2 className="text-xl font-bold text-text-bright">{section.title}</h2>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

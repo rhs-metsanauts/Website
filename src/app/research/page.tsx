@@ -7,9 +7,9 @@ export default function ResearchPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label">Section 06</span>
+            <span className="tech-label !text-xs">Section 06</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Research</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Research</h1>
           <p className="text-text-muted mb-12">Cooperative robotics for lunar exploration.</p>
         </FadeIn>
 
@@ -77,7 +77,7 @@ export default function ResearchPage() {
           <FadeIn key={section.title} delay={si * 80}>
             <div className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <span className="tech-label !text-[9px] text-amber/70">{section.tag}</span>
+                <span className="tech-label !text-[11px] text-amber/70">{section.tag}</span>
                 <div className="h-px flex-1 bg-border" />
               </div>
               <h2 className="text-xl font-bold text-text-bright mb-4">{section.title}</h2>
@@ -107,7 +107,7 @@ export default function ResearchPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
                 <span className="text-sm text-text-bright">{doc}</span>
-                <span className="text-xs text-text-muted ml-auto tech-label !text-[9px]">Placeholder</span>
+                <span className="text-xs text-text-muted ml-auto tech-label !text-[11px]">Placeholder</span>
               </div>
             ))}
           </div>
