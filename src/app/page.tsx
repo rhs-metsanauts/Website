@@ -9,7 +9,7 @@ export default function Home() {
       <section className="relative pt-24 pb-28 sm:pt-36 sm:pb-36 px-6 overflow-hidden">
         {/* Atmospheric glow */}
         <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(ellipse, rgba(232,163,23,0.06) 0%, rgba(91,156,245,0.03) 40%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse, rgba(200,127,10,0.05) 0%, rgba(37,99,235,0.02) 40%, transparent 70%)" }}
         />
 
         <div className="max-w-4xl mx-auto relative">

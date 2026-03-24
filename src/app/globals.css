@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #080c16;
-  --color-surface: #0f1524;
-  --color-surface-2: #161d30;
-  --color-border: #1e2740;
-  --color-border-bright: #2a3555;
-  --color-text: #8b95ad;
-  --color-text-muted: #5a6478;
-  --color-text-bright: #e8ecf4;
-  --color-amber: #e8a317;
-  --color-amber-soft: rgba(232, 163, 23, 0.10);
-  --color-amber-glow: rgba(232, 163, 23, 0.04);
-  --color-blue: #5b9cf5;
-  --color-blue-muted: rgba(91, 156, 245, 0.10);
-  --color-red-accent: #f87171;
-  --color-orange-accent: #fb923c;
+  --color-bg: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-surface-2: #eaecf0;
+  --color-border: #e0e3e9;
+  --color-border-bright: #cdd1d9;
+  --color-text: #4b5563;
+  --color-text-muted: #7c8594;
+  --color-text-bright: #0f1419;
+  --color-amber: #c87f0a;
+  --color-amber-soft: rgba(200, 127, 10, 0.08);
+  --color-amber-glow: rgba(200, 127, 10, 0.04);
+  --color-blue: #2563eb;
+  --color-blue-muted: rgba(37, 99, 235, 0.08);
+  --color-red-accent: #dc2626;
+  --color-orange-accent: #d97706;
 }
 
 html {
@@ -25,16 +25,16 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.025) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0);
   background-size: 28px 28px;
 }
 
 ::selection {
-  background: rgba(232, 163, 23, 0.2);
+  background: rgba(200, 127, 10, 0.18);
   color: var(--color-text-bright);
 }
 
-/* Heading font family — set via CSS var from next/font */
+/* Heading font family */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-syne), system-ui, sans-serif;
 }
@@ -54,18 +54,19 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-border-bright);
 }
 
-/* Utility: amber underline glow */
+/* Utility: amber text glow (subtle on light) */
 .amber-glow {
-  text-shadow: 0 0 30px rgba(232, 163, 23, 0.3);
+  text-shadow: 0 0 40px rgba(200, 127, 10, 0.15);
 }
 
 /* Utility: card hover lift */
 .card-hover {
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease;
+  will-change: transform;
 }
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(232, 163, 23, 0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(200, 127, 10, 0.1);
   border-color: var(--color-border-bright);
 }
 

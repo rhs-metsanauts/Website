@@ -35,7 +35,7 @@ export default function TeamPage() {
           {members.map((member, i) => (
             <FadeIn key={member.name} delay={i * 80}>
               <div className="flex gap-4 p-5 bg-surface rounded-xl border border-border card-hover">
-                <div className="w-11 h-11 rounded-full bg-surface-2 border border-border flex items-center justify-center shrink-0">
+                <div className="w-11 h-11 rounded-full bg-amber-soft border border-border flex items-center justify-center shrink-0">
                   <span className="text-sm font-semibold text-amber" style={{ fontFamily: "var(--font-syne), sans-serif" }}>
                     {member.name.split(" ").map((n) => n[0]).join("")}
                   </span>
