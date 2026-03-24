@@ -1,147 +1,196 @@
 import Link from "next/link";
 import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 sm:py-32 px-5">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden">
-              <Image src="/logo.png" alt="METSAnauts" width={48} height={48} className="object-contain" />
+      <section className="relative pt-24 pb-28 sm:pt-36 sm:pb-36 px-6 overflow-hidden">
+        {/* Atmospheric glow */}
+        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(ellipse, rgba(232,163,23,0.06) 0%, rgba(91,156,245,0.03) 40%, transparent 70%)" }}
+        />
+
+        <div className="max-w-4xl mx-auto relative">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-amber/40" />
+              <span className="tech-label">Mission ID: HERA-2026 &middot; FDR</span>
             </div>
-            <div>
-              <p className="text-xs text-text-muted uppercase tracking-widest">NASA HUNCH &middot; FDR 2026</p>
-              <h1 className="text-2xl font-bold text-text-bright">METSAnauts</h1>
+          </FadeIn>
+
+          <FadeIn delay={80}>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden">
+                <Image src="/logo.png" alt="METSAnauts" width={56} height={56} className="object-contain" />
+              </div>
+              <div>
+                <p className="tech-label !text-[10px] text-text-muted">NASA HUNCH Program</p>
+                <p className="text-lg font-semibold text-text-bright">METSAnauts</p>
+              </div>
             </div>
-          </div>
+          </FadeIn>
 
-          <p className="text-3xl sm:text-4xl font-bold text-text-bright leading-tight mb-6">
-            Building rovers and terrain simulations for NASA&apos;s HERA program.
-          </p>
+          <FadeIn delay={160}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-bright leading-[1.1] mb-8 tracking-tight">
+              Building rovers and terrain simulations for{" "}
+              <span className="text-amber amber-glow">NASA&apos;s HERA</span> program.
+            </h1>
+          </FadeIn>
 
-          <p className="text-text-muted leading-relaxed mb-8 max-w-2xl">
-            We&apos;re a five-person team from Ranchview High School in Irving, Texas. Our project
-            combines mechanical engineering, embedded electronics, LoRa communication, and
-            terrain modeling to support astronaut research inside NASA&apos;s HERA habitat.
-          </p>
+          <FadeIn delay={240}>
+            <p className="text-lg text-text leading-relaxed mb-12 max-w-2xl">
+              We&apos;re a five-person team from Ranchview High School in Irving, Texas. Our project
+              combines mechanical engineering, embedded electronics, LoRa communication, and
+              terrain modeling to support astronaut research inside NASA&apos;s HERA habitat.
+            </p>
+          </FadeIn>
 
-          <div className="flex gap-3">
-            <Link href="/mission" className="px-4 py-2 text-sm font-medium bg-blue text-white rounded-md hover:bg-blue/90 transition-colors">
-              Read our mission
-            </Link>
-            <Link href="/rover-systems" className="px-4 py-2 text-sm font-medium text-text-muted border border-border rounded-md hover:text-text-bright hover:border-text-muted transition-colors">
-              Rover systems
-            </Link>
-          </div>
+          <FadeIn delay={320}>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/mission"
+                className="px-6 py-3 text-sm font-medium bg-amber text-bg rounded-lg hover:brightness-110 transition-all"
+              >
+                Read our mission
+              </Link>
+              <Link
+                href="/rover-systems"
+                className="px-6 py-3 text-sm font-medium text-text-bright border border-border rounded-lg hover:border-amber/30 hover:text-amber transition-all"
+              >
+                Rover systems
+              </Link>
+            </div>
+          </FadeIn>
+
+          {/* Status strip */}
+          <FadeIn delay={400}>
+            <div className="mt-16 flex flex-wrap gap-6 text-xs">
+              {[
+                { label: "Rovers", value: "4 units" },
+                { label: "Terrain", value: "8\u2032 \u00d7 8\u2032" },
+                { label: "Comms", value: "LoRa + WiFi" },
+                { label: "Status", value: "Active" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex items-center gap-2">
+                  <span className="tech-label !text-[9px] text-text-muted">{stat.label}</span>
+                  <span className="text-text-bright font-medium">{stat.value}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
-
-      <div className="max-w-3xl mx-auto px-5">
-        <hr className="border-border" />
-      </div>
 
       {/* What we're building */}
-      <section className="py-16 px-5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-lg font-semibold text-text-bright mb-6">What we&apos;re building</h2>
-
-          <div className="space-y-6">
-            <div className="flex gap-4">
-              <div className="text-sm font-mono text-text-muted w-6 shrink-0 pt-0.5">01</div>
-              <div>
-                <h3 className="font-medium text-text-bright mb-1">A fleet of four rovers</h3>
-                <p className="text-sm text-text-muted leading-relaxed">
-                  Each rover has 6 independently-motored wheels with half-tread grip, rocker-bogie
-                  suspension, a robotic sample-collection claw, and a Raspberry Pi control system.
-                  They communicate over LoRa, WiFi, and Bluetooth.
-                </p>
-              </div>
+      <section className="py-20 px-6 border-t border-border">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="h-px w-8 bg-amber/30" />
+              <h2 className="text-2xl font-bold text-text-bright">What we&apos;re building</h2>
             </div>
+          </FadeIn>
 
-            <div className="flex gap-4">
-              <div className="text-sm font-mono text-text-muted w-6 shrink-0 pt-0.5">02</div>
-              <div>
-                <h3 className="font-medium text-text-bright mb-1">An 8&apos; &times; 8&apos; terrain simulation</h3>
-                <p className="text-sm text-text-muted leading-relaxed">
-                  Called BothScape, it models both the lunar south pole (Shackleton Crater) and
-                  ancient Martian terrain using foamboard, foam gap filler, and diatomaceous earth
-                  as regolith. Rovers are tested on it under realistic conditions.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="text-sm font-mono text-text-muted w-6 shrink-0 pt-0.5">03</div>
-              <div>
-                <h3 className="font-medium text-text-bright mb-1">An astronaut-friendly control interface</h3>
-                <p className="text-sm text-text-muted leading-relaxed">
-                  A web app that lets astronauts (teachers, geologists, specialists) send commands
-                  to rovers without technical knowledge. Includes an AI-powered interface that can
-                  dynamically generate control code.
-                </p>
-              </div>
-            </div>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              {
+                tag: "ROVER",
+                title: "A fleet of four rovers",
+                desc: "Six-wheel drive with half-tread grip, rocker-bogie suspension, robotic sample-collection claw, and Raspberry Pi control. They communicate over LoRa, WiFi, and Bluetooth.",
+              },
+              {
+                tag: "TERRAIN",
+                title: "8\u2032 \u00d7 8\u2032 terrain simulation",
+                desc: "Called BothScape \u2014 models the lunar south pole and ancient Martian terrain using foamboard, foam gap filler, and diatomaceous earth as regolith.",
+              },
+              {
+                tag: "CONTROL",
+                title: "Astronaut control interface",
+                desc: "A web app that lets non-technical crew send commands to rovers. Includes an AI-powered interface that generates control code from plain language.",
+              },
+            ].map((item, i) => (
+              <FadeIn key={item.title} delay={i * 100}>
+                <div className="bg-surface rounded-xl p-6 border border-border card-hover h-full">
+                  <span className="tech-label !text-[9px] text-amber/70 mb-3 block">{item.tag}</span>
+                  <h3 className="font-semibold text-text-bright mb-3">{item.title}</h3>
+                  <p className="text-sm text-text-muted leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
-      <div className="max-w-3xl mx-auto px-5">
-        <hr className="border-border" />
-      </div>
+      {/* Explore the project */}
+      <section className="py-20 px-6 border-t border-border">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="h-px w-8 bg-amber/30" />
+              <h2 className="text-2xl font-bold text-text-bright">Explore the project</h2>
+            </div>
+          </FadeIn>
 
-      {/* Quick links */}
-      <section className="py-16 px-5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-lg font-semibold text-text-bright mb-6">Explore the project</h2>
-
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { href: "/mission", title: "Mission & Goals", desc: "Problem statement and what we're solving for" },
-              { href: "/rover-systems", title: "Rover Systems", desc: "Mobility, communication, claw, and power" },
-              { href: "/bothscape", title: "BothScape Terrain", desc: "Lunar and Martian surface simulation" },
-              { href: "/innovations", title: "Key Innovations", desc: "What makes our approach different" },
-              { href: "/budget-timeline", title: "Budget & Timeline", desc: "Cost breakdown and project schedule" },
-              { href: "/research", title: "Research", desc: "Technical deep-dives and documentation" },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group flex justify-between items-center p-4 rounded-lg border border-border hover:border-text-muted transition-colors"
-              >
-                <div>
-                  <p className="text-sm font-medium text-text-bright">{link.title}</p>
-                  <p className="text-xs text-text-muted mt-0.5">{link.desc}</p>
-                </div>
-                <svg className="w-4 h-4 text-text-muted group-hover:text-text-bright transition-colors shrink-0 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              { href: "/mission", title: "Mission & Goals", desc: "Problem statement and what we're solving for", tag: "01" },
+              { href: "/rover-systems", title: "Rover Systems", desc: "Mobility, communication, claw, and power", tag: "02" },
+              { href: "/bothscape", title: "BothScape Terrain", desc: "Lunar and Martian surface simulation", tag: "03" },
+              { href: "/innovations", title: "Key Innovations", desc: "What makes our approach different", tag: "04" },
+              { href: "/budget-timeline", title: "Budget & Timeline", desc: "Cost breakdown and project schedule", tag: "05" },
+              { href: "/research", title: "Research", desc: "Technical deep-dives and documentation", tag: "06" },
+            ].map((link, i) => (
+              <FadeIn key={link.href} delay={i * 70}>
+                <Link
+                  href={link.href}
+                  className="group flex justify-between items-center p-5 rounded-xl border border-border hover:border-amber/25 hover:bg-surface transition-all"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="tech-label !text-[9px] text-text-muted mt-1">{link.tag}</span>
+                    <div>
+                      <p className="font-medium text-text-bright group-hover:text-amber transition-colors">{link.title}</p>
+                      <p className="text-sm text-text-muted mt-1">{link.desc}</p>
+                    </div>
+                  </div>
+                  <svg className="w-5 h-5 text-text-muted group-hover:text-amber group-hover:translate-x-1 transition-all shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-20 px-6 border-t border-border">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="h-px w-8 bg-amber/30" />
+              <h2 className="text-2xl font-bold text-text-bright">Our team</h2>
+            </div>
+            <p className="text-text-muted mb-8 ml-11">Ranchview High School, Irving TX</p>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="flex flex-wrap gap-x-8 gap-y-3 mb-6 ml-11">
+              {["Neil Rao", "Arun Rebbapragada", "Arnav Sangle", "Sanay Tyagi", "Advay Singi"].map((name) => (
+                <p key={name} className="text-text-bright font-medium">{name}</p>
+              ))}
+            </div>
+
+            <div className="ml-11">
+              <Link href="/team" className="inline-flex items-center gap-1.5 text-sm font-medium text-amber hover:underline">
+                About the team
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-3xl mx-auto px-5">
-        <hr className="border-border" />
-      </div>
-
-      {/* Team */}
-      <section className="py-16 px-5">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-lg font-semibold text-text-bright mb-1">Team</h2>
-          <p className="text-sm text-text-muted mb-6">Ranchview High School, Irving TX</p>
-
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            {["Neil Rao", "Arun Rebbapragada", "Arnav Sangle", "Sanay Tyagi", "Advay Singi"].map((name) => (
-              <p key={name} className="text-sm text-text-bright">{name}</p>
-            ))}
-          </div>
-
-          <Link href="/team" className="inline-block mt-4 text-sm text-blue hover:underline">
-            About the team &rarr;
-          </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -18,16 +18,34 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-sm border-b border-border">
-      <div className="max-w-6xl mx-auto px-5">
-        <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
-              <Image src="/logo.png" alt="METSAnauts" width={32} height={32} className="object-contain" />
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-bg/95 backdrop-blur-md border-b border-border"
+          : "bg-bg/80 backdrop-blur-sm border-b border-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-9 h-9 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden group-hover:border-amber/30 transition-colors">
+              <Image src="/logo.png" alt="METSAnauts" width={36} height={36} className="object-contain" />
             </div>
-            <span className="text-sm font-semibold text-text-bright tracking-wide">METSAnauts</span>
+            <div className="flex items-center gap-2">
+              <span className="text-[15px] font-semibold text-text-bright">METSAnauts</span>
+              <span className="hidden sm:inline-block tech-label !text-[9px] px-1.5 py-0.5 rounded border border-amber/20 bg-amber-soft text-amber">
+                NASA&nbsp;HUNCH
+              </span>
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">
@@ -35,7 +53,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1.5 text-[13px] text-text-muted hover:text-text-bright rounded transition-colors"
+                className="px-3 py-2 text-sm text-text-muted hover:text-amber transition-colors rounded-md"
               >
                 {link.label}
               </Link>
@@ -44,7 +62,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-1.5 text-text-muted hover:text-text-bright"
+            className="lg:hidden p-2 text-text-muted hover:text-amber rounded-md transition-colors"
             aria-label="Toggle menu"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,14 +77,14 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-surface border-b border-border">
-          <div className="px-5 py-3 space-y-0.5">
+        <div className="lg:hidden bg-bg/95 backdrop-blur-md border-t border-border">
+          <div className="px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2 text-sm text-text-muted hover:text-text-bright rounded transition-colors"
+                className="block px-3 py-2.5 text-sm text-text-muted hover:text-amber hover:bg-surface rounded-md transition-colors"
               >
                 {link.label}
               </Link>
