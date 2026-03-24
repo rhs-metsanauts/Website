@@ -9,7 +9,7 @@ export default function ResearchPage() {
             <div className="h-px w-10 bg-amber/40" />
             <span className="tech-label">Section 06</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Research</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Research</h1>
           <p className="text-text-muted mb-12">Cooperative robotics for lunar exploration.</p>
         </FadeIn>
 

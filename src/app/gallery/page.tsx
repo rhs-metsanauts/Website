@@ -10,7 +10,7 @@ export default function GalleryPage() {
             <div className="h-px w-10 bg-amber/40" />
             <span className="tech-label">Gallery</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
         </FadeIn>
 
         {[

@@ -10,7 +10,7 @@ export default function MissionPage() {
             <div className="h-px w-10 bg-amber/40" />
             <span className="tech-label">Section 01</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Mission & Goals</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Mission & Goals</h1>
           <p className="text-lg text-text-muted leading-relaxed mb-6">
             What we&apos;re solving for and why it matters.
           </p>

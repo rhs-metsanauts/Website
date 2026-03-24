@@ -18,7 +18,7 @@ export default function TeamPage() {
             <div className="h-px w-10 bg-amber/40" />
             <span className="tech-label">Team</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Team</h1>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-text-bright mb-4 tracking-tight">Team</h1>
           <p className="text-text-muted mb-12">
             Ranchview High School, Irving TX &mdash; NASA HUNCH Program, 2026
           </p>
