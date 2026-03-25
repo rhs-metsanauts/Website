@@ -64,22 +64,6 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          {/* Status strip */}
-          <FadeIn delay={300}>
-            <div className="mt-16 flex flex-wrap gap-6 text-xs">
-              {[
-                { label: "Rovers", value: "4 units" },
-                { label: "Terrain", value: "8\u2032 \u00d7 8\u2032" },
-                { label: "Comms", value: "LoRa + WiFi" },
-                { label: "Status", value: "Active" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex items-center gap-2">
-                  <span className="tech-label !text-[11px] text-amber">{stat.label}</span>
-                  <span className="text-text-bright font-medium">{stat.value}</span>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
         </div>
       </section>
 
