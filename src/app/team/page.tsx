@@ -9,12 +9,6 @@ const members = [
     desc: "Drives the overall design vision for the project and leads construction of BothScape — the 8′ × 8′ dual-surface terrain simulation replicating the lunar south pole and ancient Martian terrain. Responsible for material selection, structural layout, and ensuring the simulation meets the fidelity requirements of the HERA mission.",
   },
   {
-    name: "Skanda",
-    initials: "SK",
-    role: "Hardware Lead",
-    desc: "Owns the full hardware stack across all four rovers — electronics integration, motor systems, wiring harnesses, and physical assembly. Ensures every unit is built to spec and field-ready, leading hands-on fabrication and hardware-level troubleshooting throughout the build cycle.",
-  },
-  {
     name: "Arnav Sangle",
     initials: "AS",
     role: "Software Lead",
@@ -35,8 +29,8 @@ const members = [
   {
     name: "Arun Rebbapragada",
     initials: "AR",
-    role: "Software & Communications",
-    desc: "Develops the rover communication stack and contributes to the control software pipeline. Focuses on LoRa protocol implementation and ensuring reliable data transfer between rovers and the HERA habitat under real-world signal constraints.",
+    role: "Hardware Lead",
+    desc: "Owns the full hardware stack across all four rovers — electronics integration, motor systems, wiring harnesses, and physical assembly. Ensures every unit is built to spec and field-ready, leading hands-on fabrication and hardware-level troubleshooting throughout the build cycle.",
   },
 ];
 

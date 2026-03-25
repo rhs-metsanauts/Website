@@ -161,7 +161,7 @@ export default function Home() {
 
           <FadeIn delay={80}>
             <div className="flex flex-wrap gap-x-8 gap-y-3 mb-6 ml-11">
-              {["Neil Rao", "Skanda", "Arnav Sangle", "Sanay Tyagi", "Advay Singi", "Arun Rebbapragada"].map((name) => (
+              {["Neil Rao", "Arun Rebbapragada", "Arnav Sangle", "Sanay Tyagi", "Advay Singi"].map((name) => (
                 <p key={name} className="text-text-bright font-medium">{name}</p>
               ))}
             </div>
