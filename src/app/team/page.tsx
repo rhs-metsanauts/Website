@@ -5,32 +5,38 @@ const members = [
   {
     name: "Neil Rao",
     initials: "NR",
-    role: "Engineering Design Lead",
-    desc: "Leads the mechanical design of the rover fleet — rocker-bogie suspension, half-tread wheels, and modular component architecture.",
+    role: "Design Lead & BothScape Builder",
+    desc: "Drives the overall design vision for the project and leads construction of BothScape — the 8′ × 8′ dual-surface terrain simulation replicating the lunar south pole and ancient Martian terrain. Responsible for material selection, structural layout, and ensuring the simulation meets the fidelity requirements of the HERA mission.",
+  },
+  {
+    name: "Skanda",
+    initials: "SK",
+    role: "Hardware Lead",
+    desc: "Owns the full hardware stack across all four rovers — electronics integration, motor systems, wiring harnesses, and physical assembly. Ensures every unit is built to spec and field-ready, leading hands-on fabrication and hardware-level troubleshooting throughout the build cycle.",
+  },
+  {
+    name: "Arnav Sangle",
+    initials: "AS",
+    role: "Software Lead",
+    desc: "Architects and develops the rover software suite, including the web-based astronaut control interface and the AI-powered natural language command mode. Maintains the codebase, oversees system integration between software and hardware, and leads the team's web presence.",
+  },
+  {
+    name: "Sanay Tyagi",
+    initials: "ST",
+    role: "Financial Lead & Documentation Manager",
+    desc: "Manages the team's budget, tracks expenditures across all hardware and materials, and coordinates procurement. Also owns all project documentation — maintaining accurate technical records, write-ups, and submission materials to ensure the project is presentation-ready for FDR.",
+  },
+  {
+    name: "Advay Singi",
+    initials: "AS",
+    role: "Operations Lead",
+    desc: "Oversees day-to-day project operations — coordinating schedules, managing team workflows, and keeping milestones on track. Leads integration testing and deployment protocols to make sure all subsystems work together reliably before any mission scenario.",
   },
   {
     name: "Arun Rebbapragada",
     initials: "AR",
     role: "Software & Communications",
-    desc: "Develops the rover control software, LoRa communication stack, and the AI-powered command interface for astronaut crew.",
-  },
-  {
-    name: "Arnav Sangle",
-    initials: "AS",
-    role: "Software & Web",
-    desc: "Builds rover firmware, manages project documentation, and maintains the team website and technical write-ups.",
-  },
-  {
-    name: "Sanay Tyagi",
-    initials: "ST",
-    role: "Terrain & Crater Modeling",
-    desc: "Designs and constructs BothScape — the 8′ × 8′ dual lunar/Martian terrain simulation using foamboard and diatomaceous earth regolith.",
-  },
-  {
-    name: "Advay Singi",
-    initials: "AS",
-    role: "Mission Operations & Testing",
-    desc: "Manages integration testing, documents operational procedures, and coordinates rover deployment protocols.",
+    desc: "Develops the rover communication stack and contributes to the control software pipeline. Focuses on LoRa protocol implementation and ensuring reliable data transfer between rovers and the HERA habitat under real-world signal constraints.",
   },
 ];
 
