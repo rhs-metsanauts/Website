@@ -137,10 +137,10 @@ export default function Home() {
             {[
               { href: "/mission", title: "Mission & Goals", desc: "Problem statement and what we're solving for", tag: "01" },
               { href: "/rover-systems", title: "Rover Systems", desc: "Mobility, communication, claw, and power", tag: "02" },
-              { href: "/bothscape", title: "BothScape Terrain", desc: "Lunar and Martian surface simulation", tag: "03" },
-              { href: "/innovations", title: "Key Innovations", desc: "What makes our approach different", tag: "04" },
-              { href: "/budget-timeline", title: "Budget & Timeline", desc: "Cost breakdown and project schedule", tag: "05" },
-              { href: "/research", title: "Research", desc: "Technical deep-dives and documentation", tag: "06" },
+              { href: "/innovations", title: "Key Innovations", desc: "What makes our approach different", tag: "03" },
+              { href: "/research", title: "Research", desc: "Technical overview and documentation", tag: "04" },
+              { href: "/gallery", title: "Gallery", desc: "Photos from builds, terrain, and events", tag: "05" },
+              { href: "/team", title: "Team", desc: "The five students behind the project", tag: "06" },
             ].map((link, i) => (
               <FadeIn key={link.href} delay={i * 60}>
                 <Link

@@ -6,85 +6,98 @@ export default function ResearchPage() {
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label !text-xs">Section 06</span>
+            <div className="h-px w-10 bg-accent/30" />
+            <span className="tech-label">Research & Documentation</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Research</h1>
-          <p className="text-text-muted mb-12">Cooperative robotics for lunar exploration.</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Technical Overview</h1>
+          <p className="text-text-muted mb-12">
+            METSAnauts — NASA HUNCH, FDR 2026
+          </p>
         </FadeIn>
 
-        <FadeIn delay={100}>
-          <div className="space-y-4 mb-14">
-            <p className="text-text leading-relaxed">
-              We develop small, resilient robots designed to collaborate during extended lunar
-              simulations, including NASA&apos;s HERA missions. Rather than depending on individual
-              rovers, our system employs multiple units linked through mesh networking &mdash; enabling
-              information sharing, task coordination, and continued functionality despite unit failures.
+        <FadeIn delay={80}>
+          <div className="space-y-3 mb-14 text-text leading-relaxed">
+            <p>
+              The METSAnauts project delivers a fleet of four small rovers and a companion terrain
+              simulation for use inside NASA&apos;s HERA analog habitat at Johnson Space Center.
+              The system is designed for non-technical astronaut crew: a web-based control interface
+              — including an AI-powered natural language mode — lets crew operate rovers without
+              robotics experience.
             </p>
-            <p className="text-text-muted leading-relaxed">
-              This collaborative strategy reflects anticipated approaches for future lunar deployment
-              involving robot swarms for exploration, logistics, and environmental assessment. The
-              initiative includes an accessible software library with configurable prewritten programs
-              for non-robotics specialists.
+            <p className="text-text-muted">
+              HERA (Human Exploration Research Analog) simulates long-duration deep-space missions.
+              Our rovers give crew a hands-on tool for surface exploration tasks and terrain
+              assessment during those simulations.
             </p>
           </div>
         </FadeIn>
 
         {[
           {
-            tag: "COMMS",
-            title: "LoRa communication",
+            tag: "MOBILITY",
+            title: "Rover platform",
             items: [
-              "RP2040 coprocessor powers the LoRa-based communication module",
-              "Chosen over Bluetooth for superior range and reliability in obstructed settings",
-              "Enables low-power, long-distance communication between rovers and habitat",
-              "USB connection allows straightforward module swapping and reconfiguration",
+              "Six-wheel drive with rocker-bogie suspension for passive obstacle navigation",
+              "Half-tread wheels for grip on loose and uneven terrain",
+              "Raspberry Pi 4B as the onboard compute unit",
+              "Modular design — components are easy to replace or swap in the field",
+              "Robotic sample-collection claw for object manipulation tasks",
+            ],
+          },
+          {
+            tag: "COMMUNICATIONS",
+            title: "Multi-mode communication",
+            items: [
+              "Primary long-range link via LoRa (SX1276), chosen for range and reliability in enclosed environments",
+              "WiFi and Bluetooth as secondary channels for close-range and real-time control",
+              "RP2040 coprocessor handles the LoRa radio stack separately from the main Pi",
+              "USB hot-swap allows the comms module to be replaced without disassembly",
             ],
           },
           {
             tag: "POWER",
-            title: "Adaptive solar tracking & power",
+            title: "Solar power & tracking",
             items: [
-              "Dual-sided tracking using light-dependent resistors (LDRs)",
-              "Compares light intensity across surfaces to optimize panel exposure",
-              "Automatic body rotation for maximum energy collection at low sun angles",
-              "Reversible design accommodates rover flips and terrain shifts",
-              "Investigated MIT\u2019s electrostatic dust-removal tech using electric fields instead of brushes",
+              "Onboard solar panels provide supplemental and emergency power",
+              "Dual light-dependent resistors (LDRs) compare illumination across faces",
+              "Rover body can rotate to maximize panel exposure at low sun angles",
+              "Design is reversible — functions correctly whether rover is upright or flipped",
+              "Researched electrostatic dust-removal methods inspired by MIT lunar regolith work",
             ],
           },
           {
-            tag: "MECHANICAL",
-            title: "Mechanical resilience & stress-testing",
+            tag: "CONTROL INTERFACE",
+            title: "Astronaut control app",
             items: [
-              "Design prioritizes predictable, easy-to-replace components",
-              "Modular testing of treads, motors, and solar panel mounts",
-              "Inspired by NASA\u2019s wheel-spring patent for improved shock absorption",
-              "Spring-integrated wheel cutouts for better traction on uneven surfaces",
-              "Onboard video documentation of all rover operations",
+              "Web application built for non-technical crew aboard HERA",
+              "Standard command mode: discrete controls for movement, claw, and camera",
+              "AI-powered mode: crew types plain-language instructions, system generates rover commands",
+              "Secondary camera on the claw provides tool-perspective view during sample collection",
+              "Designed to work reliably under the communication constraints of the HERA habitat",
             ],
           },
           {
-            tag: "SENSORS",
-            title: "Situational awareness",
+            tag: "TERRAIN",
+            title: "BothScape simulation",
             items: [
-              "Each rover has a pivoting camera system",
-              "Secondary camera on the claw for tool-perspective operation",
-              "Enables remote operation in low-light or obstructed conditions",
-              "Supports tarp-over-the-crater testing scenarios in total darkness",
+              "8′ × 8′ dual-surface terrain representing lunar south pole and ancient Martian terrain",
+              "Constructed from foamboard base, foam gap filler for surface features, diatomaceous earth as lunar regolith",
+              "Split-surface design lets crew run side-by-side planetary comparison scenarios",
+              "Sized to fit within the HERA habitat footprint",
             ],
           },
         ].map((section, si) => (
-          <FadeIn key={section.title} delay={si * 80}>
+          <FadeIn key={section.title} delay={si * 70}>
             <div className="mb-10">
               <div className="flex items-center gap-3 mb-4">
-                <span className="tech-label !text-[11px] text-amber/70">{section.tag}</span>
+                <span className="tech-label !text-[10px]">{section.tag}</span>
                 <div className="h-px flex-1 bg-border" />
               </div>
               <h2 className="text-xl font-bold text-text-bright mb-4">{section.title}</h2>
               <ul className="space-y-2">
                 {section.items.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-text-muted leading-relaxed">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber shrink-0" />
+                    <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -92,26 +105,6 @@ export default function ResearchPage() {
             </div>
           </FadeIn>
         ))}
-
-        <FadeIn>
-          <h2 className="text-xl font-bold text-text-bright mb-5">Documentation</h2>
-          <div className="space-y-2">
-            {[
-              "System Architecture Diagram",
-              "Communication Protocol Specification",
-              "Mechanical Design Report",
-              "Software Library Documentation",
-            ].map((doc) => (
-              <div key={doc} className="flex items-center gap-3 py-3 px-5 rounded-xl border border-border hover:border-amber/25 hover:bg-surface transition-all cursor-default">
-                <svg className="w-4 h-4 text-amber/60 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                </svg>
-                <span className="text-sm text-text-bright">{doc}</span>
-                <span className="text-xs text-text-muted ml-auto tech-label !text-[11px]">Placeholder</span>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
       </div>
     </div>
   );

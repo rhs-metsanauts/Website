@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import { Syne, Crimson_Pro, JetBrains_Mono } from "next/font/google";
+import { Barlow, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const syne = Syne({
+const barlow = Barlow({
   subsets: ["latin"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const crimsonPro = Crimson_Pro({
-  subsets: ["latin"],
-  variable: "--font-crimson",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-barlow",
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-jetbrains",
   display: "swap",
 });
@@ -25,12 +21,17 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "METSAnauts — HERA Rover & BothScape",
   description: "NASA HUNCH engineering team building rovers and terrain simulations for the HERA program.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${crimsonPro.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className={`${crimsonPro.className} antialiased`}>
+    <html lang="en" className={`${barlow.variable} ${jetbrainsMono.variable} scroll-smooth`}>
+      <body className={`${barlow.className} antialiased`}>
         <Navbar />
         <main className="pt-16">{children}</main>
         <Footer />

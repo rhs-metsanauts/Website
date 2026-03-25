@@ -8,9 +8,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/mission", label: "Mission" },
   { href: "/rover-systems", label: "Rover Systems" },
-  { href: "/bothscape", label: "BothScape" },
   { href: "/innovations", label: "Innovations" },
-  { href: "/budget-timeline", label: "Budget & Timeline" },
   { href: "/research", label: "Research" },
   { href: "/gallery", label: "Gallery" },
   { href: "/team", label: "Team" },
@@ -28,9 +26,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-250 ${
         scrolled
-          ? "bg-bg/90 backdrop-blur-md border-b border-border"
+          ? "bg-bg/92 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-bg border-b border-transparent"
       }`}
     >
@@ -40,9 +38,9 @@ export default function Navbar() {
             <div className="w-9 h-9 flex items-center justify-center group-hover:opacity-80 transition-opacity">
               <Image src="/logo.png" alt="METSAnauts" width={36} height={36} className="object-contain" />
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[15px] font-semibold text-text-bright">METSAnauts</span>
-              <span className="hidden sm:inline-block tech-label !text-[11px] px-2 py-0.5 rounded border border-amber/20 bg-amber-soft text-amber">
+            <div className="flex items-center gap-2.5">
+              <span className="text-[15px] font-bold text-text-bright tracking-tight">METSAnauts</span>
+              <span className="hidden sm:inline-block tech-label !text-[10px] px-2 py-0.5 rounded border border-accent/25 bg-accent-soft text-accent">
                 NASA&nbsp;HUNCH
               </span>
             </div>
@@ -53,7 +51,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link px-3 py-2 text-sm text-text-muted hover:text-amber transition-colors rounded-md"
+                className="nav-link px-3 py-2 text-sm font-medium text-text-muted hover:text-blue transition-colors rounded-md"
               >
                 {link.label}
               </Link>
@@ -62,7 +60,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 text-text-muted hover:text-amber rounded-md transition-colors"
+            className="lg:hidden p-2 text-text-muted hover:text-blue rounded-md transition-colors"
             aria-label="Toggle menu"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +82,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2.5 text-sm text-text-muted hover:text-amber hover:bg-surface rounded-md transition-colors"
+                className="block px-3 py-2.5 text-sm font-medium text-text-muted hover:text-blue hover:bg-blue-muted rounded-md transition-colors"
               >
                 {link.label}
               </Link>
