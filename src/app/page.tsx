@@ -121,6 +121,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Rover photo */}
+      <section className="px-4 pb-4">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border">
+              <Image src="/images/IMG_1583.jpg" alt="METSAnauts rover on terrain" fill className="object-cover object-center" />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* What we're building */}
       <section className="py-24 px-4 border-t border-border">
         <div className="max-w-5xl mx-auto">

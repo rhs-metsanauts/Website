@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import FadeIn from "@/components/FadeIn";
 
@@ -15,7 +16,9 @@ export default function RoverSystemsPage() {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <ImagePlaceholder label="Rover CAD render or assembled photo" className="mb-14" />
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
+            <Image src="/images/IMG_0678.jpg" alt="Rover on terrain" fill className="object-cover object-top" />
+          </div>
         </FadeIn>
 
         <FadeIn delay={150}>
@@ -114,7 +117,9 @@ export default function RoverSystemsPage() {
                 A camera mounted on the claw gives the operator a clear view for precise
                 positioning. Controlled via LoRa or WiFi depending on range.
               </p>
-              <ImagePlaceholder label="Claw close-up" />
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border">
+                <Image src="/images/IMG_1583.jpg" alt="Rover with tread wheels" fill className="object-cover object-center" />
+              </div>
             </div>
             <div>
               <h2 className="text-xl font-bold text-text-bright mb-3">LDR solar tracking</h2>
