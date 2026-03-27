@@ -1,6 +1,14 @@
 import Image from "next/image";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import FadeIn from "@/components/FadeIn";
+
+const photos = [
+  { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels on terrain", wide: true },
+  { src: "/images/IMG_0678.jpg", alt: "Rover prototype overhead on terrain", wide: false },
+  { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels", wide: false },
+  { src: "/images/IMG_0678.jpg", alt: "Rover prototype on terrain", wide: true },
+  { src: "/images/IMG_1583.jpg", alt: "Rover build detail", wide: false },
+  { src: "/images/IMG_0678.jpg", alt: "Rover electronics overhead", wide: false },
+];
 
 export default function GalleryPage() {
   return (
@@ -14,47 +22,15 @@ export default function GalleryPage() {
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
         </FadeIn>
 
-        {/* Rover builds — real photos */}
-        <FadeIn delay={80}>
-          <div className="mb-14">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="tech-label !text-[11px] text-blue">HARDWARE</span>
-              <h2 className="text-xl font-bold text-text-bright">Rover builds</h2>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-border col-span-1 sm:col-span-2">
-                <Image src="/images/IMG_1583.jpg" alt="Rover with tread wheels on terrain" fill className="object-cover object-center" />
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {photos.map((photo, i) => (
+            <FadeIn key={i} delay={i * 60}>
+              <div className={`relative rounded-xl overflow-hidden border border-border ${photo.wide ? "aspect-[4/3]" : "aspect-square"}`}>
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(max-width: 640px) 50vw, 33vw" />
               </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-border">
-                <Image src="/images/IMG_0678.jpg" alt="Rover prototype overhead on terrain" fill className="object-cover object-top" />
-              </div>
-              <ImagePlaceholder label="Rocker-Bogie Detail" aspectRatio="aspect-square" className="rounded-xl" />
-              <ImagePlaceholder label="Claw Mechanism" aspectRatio="aspect-square" className="rounded-xl" />
-              <ImagePlaceholder label="Electronics Bay" aspectRatio="aspect-square" className="rounded-xl" />
-            </div>
-          </div>
-        </FadeIn>
-
-        {/* Remaining sections */}
-        {[
-          { title: "BothScape terrain", tag: "TERRAIN", items: ["Full Landscape", "Moon Region", "Mars Region", "Section Detail", "Regolith Application", "Rover on Terrain"] },
-          { title: "Communication & software", tag: "SYSTEMS", items: ["LoRa Module", "Control App UI", "RPi Wiring", "Command Testing"] },
-          { title: "Team & events", tag: "TEAM", items: ["Team Photo", "Workshop", "NASA HUNCH Meeting", "FDR Prep"] },
-        ].map((section, si) => (
-          <FadeIn key={section.title} delay={(si + 1) * 100}>
-            <div className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="tech-label !text-[11px] text-blue">{section.tag}</span>
-                <h2 className="text-xl font-bold text-text-bright">{section.title}</h2>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {section.items.map((label) => (
-                  <ImagePlaceholder key={label} label={label} aspectRatio="aspect-square" className="rounded-xl" />
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-        ))}
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </div>
   );
