@@ -8,9 +8,9 @@ const members = [
     role: "Design Lead & BothScape Builder",
     desc: (
       <>
-        Drives the overall <strong className="text-text-bright font-bold">design vision</strong> for the project and leads construction of{" "}
-        <strong className="text-text-bright font-bold">BothScape</strong> — the 8′ × 8′ dual-surface terrain simulation replicating the{" "}
-        <strong className="text-text-bright font-bold">lunar south pole</strong> and ancient Martian terrain. Responsible for material selection, structural layout, and mission fidelity.
+        Drives the overall <strong className="text-blue font-bold">design vision</strong> for the project and leads construction of{" "}
+        <strong className="text-blue font-bold">BothScape</strong> — the 8′ × 8′ dual-surface terrain simulation replicating the{" "}
+        <strong className="text-blue font-bold">lunar south pole</strong> and ancient Martian terrain. Responsible for material selection, structural layout, and mission fidelity.
       </>
     ),
   },
@@ -20,9 +20,9 @@ const members = [
     role: "Software Lead",
     desc: (
       <>
-        Architects and develops the <strong className="text-text-bright font-bold">rover software suite</strong>, including the web-based{" "}
-        <strong className="text-text-bright font-bold">astronaut control interface</strong> and the{" "}
-        <strong className="text-text-bright font-bold">AI-powered natural language command mode</strong>. Maintains the codebase and leads the team&apos;s web presence.
+        Architects and develops the <strong className="text-blue font-bold">rover software suite</strong>, including the web-based{" "}
+        <strong className="text-blue font-bold">astronaut control interface</strong> and the{" "}
+        <strong className="text-blue font-bold">AI-powered natural language command mode</strong>. Maintains the codebase and leads the team&apos;s web presence.
       </>
     ),
   },
@@ -32,8 +32,8 @@ const members = [
     role: "Financial Lead & Documentation Manager",
     desc: (
       <>
-        Manages the team&apos;s <strong className="text-text-bright font-bold">budget</strong> and tracks expenditures across all hardware and materials. Owns all{" "}
-        <strong className="text-text-bright font-bold">project documentation</strong> — technical records, write-ups, and submission materials for FDR.
+        Manages the team&apos;s <strong className="text-blue font-bold">budget</strong> and tracks expenditures across all hardware and materials. Owns all{" "}
+        <strong className="text-blue font-bold">project documentation</strong> — technical records, write-ups, and submission materials for FDR.
       </>
     ),
   },
@@ -43,8 +43,8 @@ const members = [
     role: "Operations Lead",
     desc: (
       <>
-        Oversees day-to-day <strong className="text-text-bright font-bold">project operations</strong> — coordinating schedules, managing team workflows, and keeping milestones on track. Leads{" "}
-        <strong className="text-text-bright font-bold">integration testing</strong> and deployment protocols across all subsystems.
+        Oversees day-to-day <strong className="text-blue font-bold">project operations</strong> — coordinating schedules, managing team workflows, and keeping milestones on track. Leads{" "}
+        <strong className="text-blue font-bold">integration testing</strong> and deployment protocols across all subsystems.
       </>
     ),
   },
@@ -54,8 +54,8 @@ const members = [
     role: "Hardware Lead",
     desc: (
       <>
-        Owns the full <strong className="text-text-bright font-bold">hardware stack</strong> across all four rovers —{" "}
-        <strong className="text-text-bright font-bold">electronics integration</strong>, motor systems, wiring harnesses, and physical assembly. Leads hands-on fabrication and hardware-level troubleshooting.
+        Owns the full <strong className="text-blue font-bold">hardware stack</strong> across all four rovers —{" "}
+        <strong className="text-blue font-bold">electronics integration</strong>, motor systems, wiring harnesses, and physical assembly. Leads hands-on fabrication and hardware-level troubleshooting.
       </>
     ),
   },
@@ -124,7 +124,7 @@ export default function TeamPage() {
               </div>
               <h3 className="text-lg font-bold text-text-bright mb-2">NASA HUNCH</h3>
               <p className="text-base text-text-muted leading-relaxed">
-                <strong className="text-text-bright font-bold">High School Students United with NASA to Create Hardware.</strong>{" "}
+                <strong className="text-blue font-bold">High School Students United with NASA to Create Hardware.</strong>{" "}
                 Connects high school teams with real NASA engineering challenges and facilities.
               </p>
             </div>
@@ -139,8 +139,8 @@ export default function TeamPage() {
               </div>
               <h3 className="text-lg font-bold text-text-bright mb-2">HERA at JSC</h3>
               <p className="text-base text-text-muted leading-relaxed">
-                The <strong className="text-text-bright font-bold">Human Exploration Research Analog</strong> at Johnson Space Center simulates
-                long-duration <strong className="text-text-bright font-bold">deep-space missions</strong> for astronaut research and training.
+                The <strong className="text-blue font-bold">Human Exploration Research Analog</strong> at Johnson Space Center simulates
+                long-duration <strong className="text-blue font-bold">deep-space missions</strong> for astronaut research and training.
               </p>
             </div>
           </div>

@@ -8,9 +8,9 @@ const buildingItems = [
     title: "A fleet of four rovers",
     desc: (
       <>
-        <strong className="text-text-bright font-bold">Six-wheel drive</strong> with half-tread grip, rocker-bogie suspension, robotic{" "}
-        <strong className="text-text-bright font-bold">sample-collection claw</strong>, and Raspberry Pi control. They communicate over{" "}
-        <strong className="text-text-bright font-bold">LoRa</strong>, WiFi, and Bluetooth.
+        <strong className="text-blue font-bold">Six-wheel drive</strong> with half-tread grip, rocker-bogie suspension, robotic{" "}
+        <strong className="text-blue font-bold">sample-collection claw</strong>, and Raspberry Pi control. They communicate over{" "}
+        <strong className="text-blue font-bold">LoRa</strong>, WiFi, and Bluetooth.
       </>
     ),
   },
@@ -19,9 +19,9 @@ const buildingItems = [
     title: "8′ × 8′ terrain simulation",
     desc: (
       <>
-        Called <strong className="text-text-bright font-bold">BothScape</strong> — models the{" "}
-        <strong className="text-text-bright font-bold">lunar south pole</strong> and ancient{" "}
-        <strong className="text-text-bright font-bold">Martian terrain</strong> using foamboard, foam gap filler, and diatomaceous earth as regolith.
+        Called <strong className="text-blue font-bold">BothScape</strong> — models the{" "}
+        <strong className="text-blue font-bold">lunar south pole</strong> and ancient{" "}
+        <strong className="text-blue font-bold">Martian terrain</strong> using foamboard, foam gap filler, and diatomaceous earth as regolith.
       </>
     ),
   },
@@ -30,8 +30,8 @@ const buildingItems = [
     title: "Astronaut control interface",
     desc: (
       <>
-        A <strong className="text-text-bright font-bold">web app</strong> that lets non-technical crew send commands to rovers. Includes an{" "}
-        <strong className="text-text-bright font-bold">AI-powered interface</strong> that generates control code from plain language.
+        A <strong className="text-blue font-bold">web app</strong> that lets non-technical crew send commands to rovers. Includes an{" "}
+        <strong className="text-blue font-bold">AI-powered interface</strong> that generates control code from plain language.
       </>
     ),
   },
@@ -76,12 +76,12 @@ export default function Home() {
 
           <FadeIn delay={180}>
             <p className="text-xl text-text-muted leading-relaxed mb-12 max-w-2xl">
-              We&apos;re a <strong className="text-text-bright font-bold">five-person team</strong> from{" "}
-              <strong className="text-text-bright font-bold">Ranchview High School</strong> in Irving, Texas. Our project combines{" "}
-              <strong className="text-text-bright font-bold">mechanical engineering</strong>,{" "}
-              <strong className="text-text-bright font-bold">embedded electronics</strong>,{" "}
-              <strong className="text-text-bright font-bold">LoRa communication</strong>, and{" "}
-              <strong className="text-text-bright font-bold">terrain modeling</strong> to support astronaut research inside NASA&apos;s HERA habitat.
+              We&apos;re a <strong className="text-blue font-bold">five-person team</strong> from{" "}
+              <strong className="text-blue font-bold">Ranchview High School</strong> in Irving, Texas. Our project combines{" "}
+              <strong className="text-blue font-bold">mechanical engineering</strong>,{" "}
+              <strong className="text-blue font-bold">embedded electronics</strong>,{" "}
+              <strong className="text-blue font-bold">LoRa communication</strong>, and{" "}
+              <strong className="text-blue font-bold">terrain modeling</strong> to support astronaut research inside NASA&apos;s HERA habitat.
             </p>
           </FadeIn>
 
