@@ -1,31 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* NASA color palette */
-  --color-bg: #ffffff;
-  --color-surface: #f3f6fb;
-  --color-surface-2: #e8edf5;
-  --color-border: #dce3ef;
-  --color-border-bright: #c8d1e3;
-  --color-text: #374151;
-  --color-text-muted: #64748b;
-  --color-text-bright: #0a1628;
+  /* Dark NASA palette */
+  --color-bg: #070c16;
+  --color-surface: #0d1425;
+  --color-surface-2: #141e36;
+  --color-border: #1c2c48;
+  --color-border-bright: #2a3f63;
+  --color-text: #8faec8;
+  --color-text-muted: #4a6280;
+  --color-text-bright: #d8e8f8;
 
-  /* NASA Worm red — labels, accents, highlights */
-  --color-accent: #fc3d21;
-  --color-accent-soft: rgba(252, 61, 33, 0.08);
+  /* NASA blue — primary accent */
+  --color-accent: #5b9cf6;
+  --color-accent-soft: rgba(91, 156, 246, 0.12);
 
-  /* NASA blue — primary actions, links, hovers */
-  --color-blue: #0b3d91;
-  --color-blue-muted: rgba(11, 61, 145, 0.08);
-  --color-blue-soft: #e8eef8;
+  --color-blue: #5b9cf6;
+  --color-blue-muted: rgba(91, 156, 246, 0.1);
+  --color-blue-soft: rgba(91, 156, 246, 0.07);
 
-  /* Legacy aliases so existing components compile */
-  --color-amber: #fc3d21;
-  --color-amber-soft: rgba(252, 61, 33, 0.08);
-  --color-amber-glow: rgba(252, 61, 33, 0.06);
-  --color-red-accent: #fc3d21;
-  --color-orange-accent: #e05c2a;
+  /* Legacy aliases → now blue */
+  --color-amber: #5b9cf6;
+  --color-amber-soft: rgba(91, 156, 246, 0.12);
+  --color-amber-glow: rgba(91, 156, 246, 0.2);
+  --color-red-accent: #5b9cf6;
+  --color-orange-accent: #5b9cf6;
 }
 
 html {
@@ -36,12 +35,13 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-barlow), system-ui, sans-serif;
-  background-image: radial-gradient(circle at 1px 1px, rgba(11, 61, 145, 0.025) 1px, transparent 0);
+  font-size: 17px;
+  background-image: radial-gradient(circle at 1px 1px, rgba(91, 156, 246, 0.04) 1px, transparent 0);
   background-size: 28px 28px;
 }
 
 ::selection {
-  background: rgba(11, 61, 145, 0.15);
+  background: rgba(91, 156, 246, 0.2);
   color: var(--color-text-bright);
 }
 
@@ -51,9 +51,9 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-border-bright); }
 
-/* NASA accent glow (red) */
+/* Blue glow */
 .amber-glow {
-  text-shadow: 0 0 40px rgba(252, 61, 33, 0.2);
+  text-shadow: 0 0 40px rgba(91, 156, 246, 0.35);
 }
 
 /* Card hover lift */
@@ -65,8 +65,8 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(11, 61, 145, 0.08), 0 0 0 1px rgba(11, 61, 145, 0.1);
-  border-color: rgba(11, 61, 145, 0.2);
+  box-shadow: 0 8px 32px rgba(91, 156, 246, 0.1), 0 0 0 1px rgba(91, 156, 246, 0.15);
+  border-color: rgba(91, 156, 246, 0.25);
 }
 
 /* Nav link underline animation */
@@ -115,7 +115,7 @@ body {
 }
 .btn-primary:hover {
   transform: scale(1.025);
-  box-shadow: 0 4px 20px rgba(11, 61, 145, 0.25);
+  box-shadow: 0 4px 24px rgba(91, 156, 246, 0.35);
 }
 .btn-primary:active { transform: scale(0.98); }
 
@@ -126,7 +126,7 @@ body {
 .btn-outline:hover { transform: scale(1.025); }
 .btn-outline:active { transform: scale(0.98); }
 
-/* Tech label — monospace, NASA red, all-caps */
+/* Tech label — monospace, blue, all-caps */
 .tech-label {
   font-family: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
   font-size: 0.68rem;
