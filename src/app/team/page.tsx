@@ -1,4 +1,4 @@
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const members = [
@@ -84,7 +84,9 @@ export default function TeamPage() {
 
         {/* Group photo */}
         <FadeIn delay={60}>
-          <ImagePlaceholder label="Team group photo" aspectRatio="aspect-[16/7]" className="mb-16 rounded-2xl" />
+          <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border mb-16">
+            <Image src="/images/IMG_4146_b.jpg" alt="METSAnauts team testing rover outdoors" fill className="object-cover object-center" sizes="100vw" />
+          </div>
         </FadeIn>
 
         {/* Members */}

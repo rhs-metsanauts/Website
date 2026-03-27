@@ -2,12 +2,16 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const photos = [
-  { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels on terrain", wide: true },
-  { src: "/images/IMG_0678.jpg", alt: "Rover prototype overhead on terrain", wide: false },
-  { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels", wide: false },
-  { src: "/images/IMG_0678.jpg", alt: "Rover prototype on terrain", wide: true },
-  { src: "/images/IMG_1583.jpg", alt: "Rover build detail", wide: false },
-  { src: "/images/IMG_0678.jpg", alt: "Rover electronics overhead", wide: false },
+  { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels on terrain" },
+  { src: "/images/IMG_4146_b.jpg", alt: "Team controlling rover with laptop outdoors" },
+  { src: "/images/IMG_4147_b.jpg", alt: "Team member with rover on grass" },
+  { src: "/images/IMG_0678.jpg", alt: "Rover prototype overhead on terrain" },
+  { src: "/images/IMG_4146_a.jpg", alt: "Team member walking alongside rover" },
+  { src: "/images/IMG_4147_a.jpg", alt: "Team inspecting rover outdoors" },
+  { src: "/images/IMG_4148_a.jpg", alt: "Rover electronics and wiring close-up" },
+  { src: "/images/IMG_4149_a.jpg", alt: "Rover on grass in front of school" },
+  { src: "/images/IMG_4148_b.jpg", alt: "Team member adjusting rover" },
+  { src: "/images/IMG_4149_b.jpg", alt: "Two team members with rover outdoors" },
 ];
 
 export default function GalleryPage() {
@@ -22,11 +26,18 @@ export default function GalleryPage() {
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
         </FadeIn>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div className="columns-2 sm:columns-3 gap-3 space-y-3">
           {photos.map((photo, i) => (
-            <FadeIn key={i} delay={i * 60}>
-              <div className={`relative rounded-xl overflow-hidden border border-border ${photo.wide ? "aspect-[4/3]" : "aspect-square"}`}>
-                <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="(max-width: 640px) 50vw, 33vw" />
+            <FadeIn key={i} delay={i * 50}>
+              <div className="relative w-full overflow-hidden rounded-xl border border-border break-inside-avoid">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                />
               </div>
             </FadeIn>
           ))}
