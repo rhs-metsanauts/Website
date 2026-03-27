@@ -7,8 +7,8 @@ export default function RoverSystemsPage() {
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label !text-xs">Section 02</span>
+            <div className="h-px w-10 bg-blue/40" />
+            <span className="tech-label !text-xs">Rover Systems</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Rover Systems</h1>
           <p className="text-text-muted mb-12">Mechanical, electrical, and software breakdown of the rover fleet.</p>

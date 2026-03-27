@@ -102,6 +102,22 @@ export default function Home() {
             </div>
           </FadeIn>
 
+          <FadeIn delay={320}>
+            <div className="mt-16 flex flex-wrap gap-10">
+              {[
+                { label: "Rovers", value: "4 units" },
+                { label: "Terrain", value: "8′ × 8′" },
+                { label: "Comms", value: "LoRa + WiFi" },
+                { label: "Status", value: "Active" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex items-center gap-2.5">
+                  <span className="tech-label !text-[10px] text-text-muted">{stat.label}</span>
+                  <span className="text-sm font-semibold text-text-bright">{stat.value}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
         </div>
       </section>
 

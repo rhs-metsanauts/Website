@@ -39,8 +39,8 @@ export default function InnovationsPage() {
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-10 bg-amber/40" />
-            <span className="tech-label !text-xs">Section 04</span>
+            <div className="h-px w-10 bg-blue/40" />
+            <span className="tech-label !text-xs">Innovations</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Key Innovations</h1>
           <p className="text-text-muted mb-12">What makes our approach different from a standard rover build.</p>
