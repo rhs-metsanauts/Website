@@ -141,12 +141,12 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { href: "/mission", title: "Mission & Goals", desc: "Problem statement and what we're solving for", tag: "01" },
-              { href: "/rover-systems", title: "Rover Systems", desc: "Mobility, communication, claw, and power", tag: "02" },
-              { href: "/innovations", title: "Key Innovations", desc: "What makes our approach different", tag: "03" },
-              { href: "/research", title: "Research", desc: "Technical overview and documentation", tag: "04" },
-              { href: "/gallery", title: "Gallery", desc: "Photos from builds, terrain, and events", tag: "05" },
-              { href: "/team", title: "Team", desc: "The five students behind the project", tag: "06" },
+              { href: "/mission", title: "Mission & Goals", desc: "Problem statement and what we're solving for" },
+              { href: "/rover-systems", title: "Rover Systems", desc: "Mobility, communication, claw, and power" },
+              { href: "/innovations", title: "Key Innovations", desc: "What makes our approach different" },
+              { href: "/research", title: "Research", desc: "Technical overview and documentation" },
+              { href: "/gallery", title: "Gallery", desc: "Photos from builds, terrain, and events" },
+              { href: "/team", title: "Team", desc: "The five students behind the project" },
             ].map((link, i) => (
               <FadeIn key={link.href} delay={i * 60}>
                 <Link
@@ -154,7 +154,6 @@ export default function Home() {
                   className="explore-link group flex justify-between items-center p-6 rounded-xl border border-border hover:border-blue/25"
                 >
                   <div className="flex items-start gap-5">
-                    <span className="tech-label !text-[11px] text-blue mt-0.5">{link.tag}</span>
                     <div>
                       <p className="text-base font-semibold text-text-bright group-hover:text-blue transition-colors">{link.title}</p>
                       <p className="text-sm text-text-muted mt-1.5">{link.desc}</p>

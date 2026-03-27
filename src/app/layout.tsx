@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Barlow, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const barlow = Barlow({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-barlow",
   display: "swap",
 });
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${barlow.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className={`${barlow.className} antialiased`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth`}>
+      <body className={`${spaceGrotesk.className} antialiased`}>
         <Navbar />
         <main className="pt-16">{children}</main>
         <Footer />
