@@ -85,7 +85,7 @@ export default function TeamPage() {
         {/* Group photo */}
         <FadeIn delay={60}>
           <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border mb-16">
-            <Image src="/images/IMG_4146_b.jpg" alt="METSAnauts team testing rover outdoors" fill className="object-cover object-center" sizes="100vw" />
+            <Image src="/images/team_formal.jpg" alt="METSAnauts team" fill className="object-cover object-center" sizes="100vw" />
           </div>
         </FadeIn>
 

@@ -4,6 +4,7 @@ import FadeIn from "@/components/FadeIn";
 const photos = [
   { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels on terrain" },
   { src: "/images/IMG_4146_b.jpg", alt: "Team controlling rover with laptop outdoors" },
+  { src: "/images/rover_overhead.jpg", alt: "Rover overhead view" },
   { src: "/images/IMG_4147_b.jpg", alt: "Team member with rover on grass" },
   { src: "/images/IMG_0678.jpg", alt: "Rover prototype overhead on terrain" },
   { src: "/images/IMG_4146_a.jpg", alt: "Team member walking alongside rover" },
@@ -12,6 +13,7 @@ const photos = [
   { src: "/images/IMG_4149_a.jpg", alt: "Rover on grass in front of school" },
   { src: "/images/IMG_4148_b.jpg", alt: "Team member adjusting rover" },
   { src: "/images/IMG_4149_b.jpg", alt: "Two team members with rover outdoors" },
+  { src: "/images/team_formal.jpg", alt: "METSAnauts team formal photo" },
 ];
 
 export default function GalleryPage() {

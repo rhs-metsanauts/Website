@@ -118,7 +118,7 @@ export default function RoverSystemsPage() {
                 positioning. Controlled via LoRa or WiFi depending on range.
               </p>
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border">
-                <Image src="/images/IMG_1583.jpg" alt="Rover with tread wheels" fill className="object-cover object-center" />
+                <Image src="/images/rover_overhead.jpg" alt="Rover overhead view" fill className="object-cover object-center" sizes="(max-width: 640px) 100vw, 50vw" />
               </div>
             </div>
             <div>
@@ -128,7 +128,9 @@ export default function RoverSystemsPage() {
                 Raspberry Pi processes readings to find the strongest direction, then the rover
                 repositions itself to maximize solar panel exposure.
               </p>
-              <ImagePlaceholder label="LDR system diagram" />
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-white">
+                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" />
+              </div>
             </div>
           </div>
         </FadeIn>
