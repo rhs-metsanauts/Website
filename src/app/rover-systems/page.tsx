@@ -64,11 +64,20 @@ export default function RoverSystemsPage() {
             ))}
           </div>
 
-          <p className="text-sm text-text-muted mb-14 leading-relaxed">
+          <p className="text-sm text-text-muted mb-6 leading-relaxed">
             The control flow runs: <span className="font-medium text-text-bright">Laptop App &rarr; LoRa Transmitter &rarr; LoRa Receiver &rarr; Rover.</span> Commands
             are packaged for reliable transmission, sent wirelessly, and the rover receives and acts
             on them automatically.
           </p>
+
+          <div className="grid sm:grid-cols-2 gap-6 mb-14">
+            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-white">
+              <Image src="/images/comms_flow.png" alt="Communication flow diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" />
+            </div>
+            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-white">
+              <Image src="/images/rover_subsystems.png" alt="Rover subsystems diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" />
+            </div>
+          </div>
         </FadeIn>
 
         <FadeIn>

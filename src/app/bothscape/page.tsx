@@ -1,4 +1,4 @@
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 export default function BothScapePage() {
@@ -18,7 +18,9 @@ export default function BothScapePage() {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <ImagePlaceholder label="BothScape overview photo" className="mb-14" />
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
+            <Image src="/images/IMG_4560.jpg" alt="BothScape overview photo" fill className="object-cover object-top" />
+          </div>
         </FadeIn>
 
         <FadeIn>
@@ -32,7 +34,9 @@ export default function BothScapePage() {
             hydrogen-rich areas detected by probes. Used to test rover navigation in low-light
             conditions and validate power-system behavior under constrained solar input.
           </p>
-          <ImagePlaceholder label="Moon region close-up" className="mb-14" />
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
+            <Image src="/images/IMG_4561.jpg" alt="Moon region close-up" fill className="object-cover object-top" />
+          </div>
         </FadeIn>
 
         <FadeIn>
@@ -46,7 +50,9 @@ export default function BothScapePage() {
             volcanic soil with fine, dusty textures. Includes ancient channel features and lava plains.
             Tests rover endurance on dry, powdery surfaces.
           </p>
-          <ImagePlaceholder label="Mars region close-up" className="mb-14" />
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
+            <Image src="/images/IMG_4562.jpg" alt="Mars region close-up" fill className="object-cover object-top" />
+          </div>
         </FadeIn>
 
         <FadeIn>

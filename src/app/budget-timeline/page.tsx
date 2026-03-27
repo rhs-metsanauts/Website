@@ -1,4 +1,4 @@
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 export default function BudgetTimelinePage() {
@@ -15,7 +15,9 @@ export default function BudgetTimelinePage() {
 
         <FadeIn delay={100}>
           <h2 className="text-xl font-bold text-text-bright mb-5">Budget</h2>
-          <ImagePlaceholder label="Budget chart \u2014 cost breakdown by category" aspectRatio="aspect-[2/1]" className="mb-6" />
+          <div className="relative w-full aspect-[2/1] rounded-xl overflow-hidden border border-border mb-6 bg-white">
+            <Image src="/images/budget_chart.png" alt="Budget chart — cost breakdown by category" fill className="object-contain p-4" />
+          </div>
         </FadeIn>
 
         <FadeIn delay={150}>
