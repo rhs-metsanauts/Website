@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/research", label: "Research" },
   { href: "/gallery", label: "Gallery" },
   { href: "/team", label: "Team" },
+  { href: "/blog", label: "Blog", soon: true },
 ];
 
 export default function Navbar() {
@@ -51,9 +52,23 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="nav-link px-3 py-2 text-sm font-medium text-text-muted hover:text-blue transition-colors rounded-md"
+                className="nav-link px-3 py-2 text-sm font-medium text-text-muted hover:text-blue transition-colors rounded-md flex items-center gap-1.5"
               >
                 {link.label}
+                {link.soon && (
+                  <svg
+                    viewBox="0 0 28 28"
+                    className="w-[18px] h-[18px] animate-spin shrink-0"
+                    style={{ animationDuration: "8s", animationTimingFunction: "linear" }}
+                  >
+                    <defs>
+                      <path id="navCircle" d="M 14,14 m -10,0 a 10,10 0 1,1 20,0 a 10,10 0 1,1 -20,0" />
+                    </defs>
+                    <text fill="#60a5fa" fontSize="5.2" fontFamily="monospace" letterSpacing="1.4">
+                      <textPath href="#navCircle">SOON · SOON · </textPath>
+                    </text>
+                  </svg>
+                )}
               </Link>
             ))}
           </div>
@@ -82,9 +97,23 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2.5 text-sm font-medium text-text-muted hover:text-blue hover:bg-blue-muted rounded-md transition-colors"
+                className="flex items-center gap-2 px-3 py-2.5 text-sm font-medium text-text-muted hover:text-blue hover:bg-blue-muted rounded-md transition-colors"
               >
                 {link.label}
+                {link.soon && (
+                  <svg
+                    viewBox="0 0 28 28"
+                    className="w-[18px] h-[18px] animate-spin shrink-0"
+                    style={{ animationDuration: "8s", animationTimingFunction: "linear" }}
+                  >
+                    <defs>
+                      <path id="navCircleMobile" d="M 14,14 m -10,0 a 10,10 0 1,1 20,0 a 10,10 0 1,1 -20,0" />
+                    </defs>
+                    <text fill="#60a5fa" fontSize="5.2" fontFamily="monospace" letterSpacing="1.4">
+                      <textPath href="#navCircleMobile">SOON · SOON · </textPath>
+                    </text>
+                  </svg>
+                )}
               </Link>
             ))}
           </div>
