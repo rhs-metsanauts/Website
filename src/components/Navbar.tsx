@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/research", label: "Research" },
   { href: "/gallery", label: "Gallery" },
   { href: "/team", label: "Team" },
-  { href: "/blog", label: "Mission Log", soon: true },
+  { href: "/blog", label: "Mission Log" },
 ];
 
 export default function Navbar() {
