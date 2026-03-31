@@ -1,4 +1,4 @@
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 export default function MissionPage() {
@@ -73,7 +73,9 @@ export default function MissionPage() {
         </FadeIn>
 
         <FadeIn delay={250}>
-          <ImagePlaceholder label="HERA habitat / NASA HUNCH program photo" />
+          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-border">
+            <Image src="/images/lunar_landscape.png" alt="Lunar landscape terrain model" fill className="object-cover object-center" sizes="100vw" />
+          </div>
         </FadeIn>
       </div>
     </div>

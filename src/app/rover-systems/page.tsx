@@ -71,11 +71,11 @@ export default function RoverSystemsPage() {
           </p>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-14">
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-white">
-              <Image src="/images/comms_flow.png" alt="Communication flow diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" />
+            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-surface">
+              <Image src="/images/comms_flow.png" alt="Communication flow diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1)" }} />
             </div>
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-white">
-              <Image src="/images/rover_subsystems.png" alt="Rover subsystems diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" />
+            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-surface">
+              <Image src="/images/rover_subsystems.png" alt="Rover subsystems diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1)" }} />
             </div>
           </div>
         </FadeIn>
@@ -137,8 +137,8 @@ export default function RoverSystemsPage() {
                 Raspberry Pi processes readings to find the strongest direction, then the rover
                 repositions itself to maximize solar panel exposure.
               </p>
-              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-white">
-                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" />
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-surface">
+                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1)" }} />
               </div>
             </div>
           </div>
