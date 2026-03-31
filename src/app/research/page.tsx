@@ -96,21 +96,19 @@ export default function ResearchPage() {
                 <span className="tech-label !text-[10px]">{section.tag}</span>
                 <div className="h-px flex-1 bg-border" />
               </div>
-              <div className="grid sm:grid-cols-3 gap-6 items-start">
-                <div className="sm:col-span-2">
-                  <h2 className="text-xl font-bold text-text-bright mb-4">{section.title}</h2>
-                  <ul className="space-y-2">
-                    {section.items.map((item) => (
-                      <li key={item} className="flex gap-3 text-base text-text-muted leading-relaxed">
-                        <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div>
+                <h2 className="text-xl font-bold text-text-bright mb-4">{section.title}</h2>
+                <ul className="space-y-2 mb-6">
+                  {section.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-text-muted leading-relaxed">
+                      <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
                 {section.image && (
-                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-                    <Image src={section.image} alt={section.title} fill className="object-contain p-3" sizes="(max-width: 640px) 100vw, 33vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+                  <div className="relative w-full aspect-[16/7] rounded-xl overflow-hidden border border-border bg-black">
+                    <Image src={section.image} alt={section.title} fill className="object-contain" sizes="100vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
                   </div>
                 )}
               </div>

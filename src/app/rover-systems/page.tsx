@@ -72,10 +72,10 @@ export default function RoverSystemsPage() {
 
           <div className="grid sm:grid-cols-2 gap-6 mb-14">
             <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-              <Image src="/images/comms_flow.png" alt="Communication flow diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+              <Image src="/images/comms_flow.png" alt="Communication flow diagram" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
             </div>
             <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-              <Image src="/images/rover_subsystems.png" alt="Rover subsystems diagram" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+              <Image src="/images/rover_subsystems.png" alt="Rover subsystems diagram" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
             </div>
           </div>
         </FadeIn>
@@ -138,7 +138,7 @@ export default function RoverSystemsPage() {
                 repositions itself to maximize solar panel exposure.
               </p>
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain p-4" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
               </div>
             </div>
           </div>
