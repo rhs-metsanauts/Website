@@ -42,8 +42,9 @@ export default function BlogPage() {
                   fontSize="15"
                   fontFamily="monospace"
                   fontWeight="600"
+                  letterSpacing="5.5"
                 >
-                  <textPath href="#textCircle" textLength="490" lengthAdjust="spacing">COMING SOON  COMING SOON</textPath>
+                  <textPath href="#textCircle">COMING SOON</textPath>
                 </text>
               </svg>
 
