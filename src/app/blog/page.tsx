@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 export default function BlogPage() {
@@ -11,7 +12,7 @@ export default function BlogPage() {
             <div className="h-px w-10 bg-blue/40" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">
-            Build Log &amp; Updates
+            Mission Log
           </h1>
           <p className="text-text-muted mb-20 max-w-lg mx-auto">
             Behind-the-scenes posts about our build process, lessons learned, and progress updates.
@@ -20,52 +21,44 @@ export default function BlogPage() {
 
         <FadeIn delay={120}>
           <div className="flex items-center justify-center">
-            <svg
-              viewBox="0 0 200 200"
-              className="w-52 h-52 sm:w-72 sm:h-72 animate-spin"
-              style={{ animationDuration: "12s", animationTimingFunction: "linear" }}
-              aria-label="Coming soon"
-            >
-              <defs>
-                <path
-                  id="textCircle"
-                  d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
+            <div className="relative flex items-center justify-center w-64 h-64 sm:w-80 sm:h-80">
+              {/* Spinning text ring */}
+              <svg
+                viewBox="0 0 200 200"
+                className="absolute inset-0 w-full h-full animate-spin"
+                style={{ animationDuration: "12s", animationTimingFunction: "linear" }}
+                aria-hidden="true"
+              >
+                <defs>
+                  <path
+                    id="textCircle"
+                    d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"
+                  />
+                </defs>
+                <circle cx="100" cy="100" r="90" fill="none" stroke="#1e3a5f" strokeWidth="1.5" />
+                <circle cx="100" cy="100" r="66" fill="none" stroke="#1e3a5f" strokeWidth="0.5" />
+                <text
+                  fill="#60a5fa"
+                  fontSize="15"
+                  fontFamily="monospace"
+                  letterSpacing="5.8"
+                  fontWeight="600"
+                >
+                  <textPath href="#textCircle">COMING SOON · COMING SOON · </textPath>
+                </text>
+              </svg>
+
+              {/* Static logo */}
+              <div className="relative z-10 w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="METSAnauts"
+                  width={112}
+                  height={112}
+                  className="object-contain"
                 />
-              </defs>
-              <circle cx="100" cy="100" r="82" fill="none" stroke="#1e3a5f" strokeWidth="1.5" />
-              <circle cx="100" cy="100" r="62" fill="none" stroke="#1e3a5f" strokeWidth="0.5" />
-              <text
-                fill="#60a5fa"
-                fontSize="12.5"
-                fontFamily="monospace"
-                letterSpacing="5.5"
-                fontWeight="600"
-              >
-                <textPath href="#textCircle">COMING SOON · COMING SOON · </textPath>
-              </text>
-              <text
-                x="100"
-                y="96"
-                textAnchor="middle"
-                fill="#e2e8f0"
-                fontSize="11"
-                fontFamily="monospace"
-                letterSpacing="3"
-              >
-                POSTS
-              </text>
-              <text
-                x="100"
-                y="116"
-                textAnchor="middle"
-                fill="#e2e8f0"
-                fontSize="11"
-                fontFamily="monospace"
-                letterSpacing="3"
-              >
-                INCOMING
-              </text>
-            </svg>
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>
