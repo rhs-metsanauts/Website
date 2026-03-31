@@ -43,17 +43,17 @@ export default function BlogPage() {
                   fontFamily="monospace"
                   fontWeight="600"
                 >
-                  <textPath href="#textCircle" textLength="490" lengthAdjust="spacing">COMING SOON · COMING SOON ·</textPath>
+                  <textPath href="#textCircle" textLength="490" lengthAdjust="spacing">COMING SOON  COMING SOON</textPath>
                 </text>
               </svg>
 
               {/* Static logo clipped to circle */}
-              <div className="relative z-10 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex items-center justify-center">
+              <div className="relative z-10 w-[66%] h-[66%] rounded-full overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt="METSAnauts"
-                  width={112}
-                  height={112}
+                  width={256}
+                  height={256}
                   className="object-cover w-full h-full"
                 />
               </div>
