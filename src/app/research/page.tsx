@@ -37,7 +37,7 @@ export default function ResearchPage() {
           {
             tag: "MOBILITY",
             title: "Rover platform",
-            image: "/images/rover_subsystems.png",
+            image: "/images/rover_subsystems.svg",
             items: [
               "Six-wheel drive with rocker-bogie suspension for passive obstacle navigation",
               "Half-tread wheels for grip on loose and uneven terrain",
@@ -81,7 +81,7 @@ export default function ResearchPage() {
           {
             tag: "TERRAIN",
             title: "BothScape simulation",
-            image: "/images/bothscape_layout.png",
+            image: "/images/bothscape_layout.svg",
             items: [
               "8′ × 8′ dual-surface terrain representing lunar south pole and ancient Martian terrain",
               "Constructed from foamboard base, foam gap filler for surface features, diatomaceous earth as lunar regolith",
@@ -108,7 +108,7 @@ export default function ResearchPage() {
                 </ul>
                 {section.image && (
                   <div className="relative w-full aspect-[16/7] rounded-xl overflow-hidden border border-border bg-black">
-                    <Image src={section.image} alt={section.title} fill className="object-contain" sizes="100vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+                    <Image src={section.image} alt={section.title} fill className="object-contain" sizes="100vw" />
                   </div>
                 )}
               </div>

@@ -70,12 +70,12 @@ export default function RoverSystemsPage() {
             on them automatically.
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-6 mb-14">
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-              <Image src="/images/comms_flow.png" alt="Communication flow diagram" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+          <div className="space-y-6 mb-14">
+            <div className="relative w-full aspect-[900/320] rounded-xl overflow-hidden border border-border bg-black">
+              <Image src="/images/comms_flow.svg" alt="Communication flow diagram" fill className="object-contain" sizes="100vw" />
             </div>
-            <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-              <Image src="/images/rover_subsystems.png" alt="Rover subsystems diagram" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+            <div className="relative w-full aspect-[900/400] rounded-xl overflow-hidden border border-border bg-black">
+              <Image src="/images/rover_subsystems.svg" alt="Rover subsystems diagram" fill className="object-contain" sizes="100vw" />
             </div>
           </div>
         </FadeIn>
@@ -138,7 +138,7 @@ export default function RoverSystemsPage() {
                 repositions itself to maximize solar panel exposure.
               </p>
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-black">
-                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(3) brightness(1.4)" }} />
+                <Image src="/images/rover_electronics.png" alt="Rover electronics components" fill className="object-contain" sizes="(max-width: 640px) 100vw, 50vw" style={{ filter: "invert(1) saturate(2) brightness(1.3)" }} />
               </div>
             </div>
           </div>
