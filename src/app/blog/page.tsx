@@ -8,7 +8,7 @@ export default function BlogPage() {
         <FadeIn>
           <div className="flex items-center gap-3 mb-6 justify-center">
             <div className="h-px w-10 bg-blue/40" />
-            <span className="tech-label !text-xs">Blog</span>
+            <span className="tech-label !text-xs">Mission Log</span>
             <div className="h-px w-10 bg-blue/40" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">
@@ -41,10 +41,9 @@ export default function BlogPage() {
                   fill="#60a5fa"
                   fontSize="15"
                   fontFamily="monospace"
-                  letterSpacing="5.8"
                   fontWeight="600"
                 >
-                  <textPath href="#textCircle">COMING SOON · COMING SOON · </textPath>
+                  <textPath href="#textCircle" textLength="490" lengthAdjust="spacing">COMING SOON ✦ COMING SOON ✦</textPath>
                 </text>
               </svg>
 
