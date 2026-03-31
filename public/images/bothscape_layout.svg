@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" width="700" height="500" style="background:#ffffff;font-family:monospace">
+  <text x="350" y="32" text-anchor="middle" fill="#0b3d91" font-size="11" letter-spacing="3">BOTHSCAPE TERRAIN — TOP VIEW</text>
+  <text x="350" y="50" text-anchor="middle" fill="#64748b" font-size="9">8 ft × 8 ft dual-surface simulation</text>
+
+  <rect x="80" y="70" width="540" height="360" rx="6" fill="none" stroke="#c0cfe8" stroke-width="2"/>
+
+  <!-- Left: Lunar -->
+  <rect x="80" y="70" width="270" height="360" rx="6" fill="#e8f0fe"/>
+  <text x="215" y="100" text-anchor="middle" fill="#0b3d91" font-size="9" letter-spacing="2">LUNAR SOUTH POLE</text>
+
+  <ellipse cx="160" cy="190" rx="45" ry="30" fill="#c8d8f0" stroke="#a0b8e0" stroke-width="1"/>
+  <text x="160" y="195" text-anchor="middle" fill="#64748b" font-size="7">crater</text>
+  <ellipse cx="280" cy="280" rx="30" ry="20" fill="#c8d8f0" stroke="#a0b8e0" stroke-width="1"/>
+  <text x="280" y="285" text-anchor="middle" fill="#64748b" font-size="7">crater</text>
+  <circle cx="140" cy="270" r="3" fill="#a0b8e0"/>
+  <circle cx="200" cy="310" r="4" fill="#a0b8e0"/>
+  <circle cx="240" cy="160" r="3" fill="#a0b8e0"/>
+  <circle cx="170" cy="360" r="3" fill="#a0b8e0"/>
+  <circle cx="300" cy="340" r="4" fill="#a0b8e0"/>
+  <circle cx="110" cy="320" r="2" fill="#a0b8e0"/>
+  <text x="215" y="395" text-anchor="middle" fill="#64748b" font-size="8">diatomaceous earth regolith</text>
+  <text x="215" y="408" text-anchor="middle" fill="#64748b" font-size="8">foamboard base · foam gap filler</text>
+
+  <!-- Right: Martian -->
+  <rect x="350" y="70" width="270" height="360" rx="6" fill="#fdf0e8"/>
+  <text x="485" y="100" text-anchor="middle" fill="#0b3d91" font-size="9" letter-spacing="2">ANCIENT MARTIAN TERRAIN</text>
+
+  <ellipse cx="420" cy="200" rx="55" ry="18" fill="#e8c8a8" stroke="#d0a878" stroke-width="1"/>
+  <text x="420" y="205" text-anchor="middle" fill="#64748b" font-size="7">ridge</text>
+  <ellipse cx="540" cy="310" rx="40" ry="14" fill="#e8c8a8" stroke="#d0a878" stroke-width="1"/>
+  <text x="540" y="315" text-anchor="middle" fill="#64748b" font-size="7">ridge</text>
+  <circle cx="460" cy="270" r="5" fill="#d0a878"/>
+  <circle cx="390" cy="330" r="4" fill="#d0a878"/>
+  <circle cx="510" cy="180" r="6" fill="#d0a878"/>
+  <circle cx="560" cy="240" r="3" fill="#d0a878"/>
+  <circle cx="420" cy="380" r="4" fill="#d0a878"/>
+  <text x="485" y="395" text-anchor="middle" fill="#64748b" font-size="8">rocky outcrops · elevation changes</text>
+  <text x="485" y="408" text-anchor="middle" fill="#64748b" font-size="8">foam gap filler terrain features</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="70" x2="350" y2="430" stroke="#c0cfe8" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Dimensions -->
+  <line x1="80" y1="445" x2="620" y2="445" stroke="#c0cfe8" stroke-width="1"/>
+  <line x1="80" y1="440" x2="80" y2="450" stroke="#c0cfe8" stroke-width="1"/>
+  <line x1="620" y1="440" x2="620" y2="450" stroke="#c0cfe8" stroke-width="1"/>
+  <text x="350" y="460" text-anchor="middle" fill="#64748b" font-size="9">8 ft</text>
+  <line x1="55" y1="70" x2="55" y2="430" stroke="#c0cfe8" stroke-width="1"/>
+  <line x1="50" y1="70" x2="60" y2="70" stroke="#c0cfe8" stroke-width="1"/>
+  <line x1="50" y1="430" x2="60" y2="430" stroke="#c0cfe8" stroke-width="1"/>
+  <text x="40" y="255" text-anchor="middle" fill="#64748b" font-size="9" transform="rotate(-90 40 255)">8 ft</text>
+  <text x="350" y="485" text-anchor="middle" fill="#64748b" font-size="8">not to scale · schematic representation</text>
+</svg>
