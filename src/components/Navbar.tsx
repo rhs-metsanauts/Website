@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const navLinks = [
+const navLinks: { href: string; label: string; soon?: boolean }[] = [
   { href: "/", label: "Home" },
   { href: "/mission", label: "Mission" },
   { href: "/rover-systems", label: "Rover Systems" },
