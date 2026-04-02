@@ -41,13 +41,13 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-20 pb-28 sm:pt-28 sm:pb-36 px-4 overflow-hidden">
+      <section className="relative pt-20 pb-28 sm:pt-28 sm:pb-36 px-6 overflow-hidden">
         {/* Atmospheric glow */}
         <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(ellipse, rgba(91,156,246,0.08) 0%, rgba(91,156,246,0.02) 40%, transparent 70%)" }}
         />
 
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           <FadeIn>
             <div className="flex items-center gap-3 mb-8">
               <div className="h-px w-14 bg-blue/40" />
@@ -122,8 +122,8 @@ export default function Home() {
       </section>
 
       {/* Rover photo */}
-      <section className="px-4 pb-4">
-        <div className="max-w-5xl mx-auto">
+      <section className="px-6 pb-4">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border">
               <Image src="/images/IMG_1583.jpg" alt="METSAnauts rover on terrain" fill className="object-cover object-center" />
@@ -133,8 +133,8 @@ export default function Home() {
       </section>
 
       {/* What we're building */}
-      <section className="py-24 px-4 border-t border-border">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-12">
               <div className="h-px w-8 bg-blue/30" />
@@ -157,8 +157,8 @@ export default function Home() {
       </section>
 
       {/* Explore the project */}
-      <section className="py-24 px-4 border-t border-border">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-12">
               <div className="h-px w-8 bg-blue/30" />
@@ -197,8 +197,8 @@ export default function Home() {
       </section>
 
       {/* Team */}
-      <section className="py-24 px-4 border-t border-border">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-24 px-6 border-t border-border">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-2">
               <div className="h-px w-8 bg-blue/30" />

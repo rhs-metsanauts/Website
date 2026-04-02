@@ -3,8 +3,8 @@ import FadeIn from "@/components/FadeIn";
 
 export default function MissionPage() {
   return (
-    <div className="py-20 sm:py-28 px-4">
-      <div className="max-w-5xl mx-auto">
+    <div className="py-20 sm:py-28 px-6">
+      <div className="max-w-6xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-blue/40" />
