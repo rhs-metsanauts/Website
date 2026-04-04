@@ -50,7 +50,7 @@ body {
 
 /* ─── Deep Space Background ────────────────────────────── */
 
-/* Layer 1: base gradient — pitch black top, deep navy-blue bottom */
+/* Layer 1: base gradient + slow star layer — 180s orbit */
 body::before {
   content: "";
   position: fixed;
@@ -58,14 +58,25 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
+    radial-gradient(2px 2px at 9%  19%, rgba(255,255,255,0.80) 0%, transparent 100%),
+    radial-gradient(1px 1px at 26% 47%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(2px 2px at 48% 73%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(1px 1px at 62% 11%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(2px 2px at 78% 58%, rgba(255,255,255,0.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 93% 34%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 11% 86%, rgba(120,180,255,0.70) 0%, transparent 100%),
+    radial-gradient(2px 2px at 54% 42%, rgba(120,180,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 87% 79%, rgba(120,180,255,0.65) 0%, transparent 100%),
     radial-gradient(ellipse 120% 60% at 50% 140%, rgba(91, 156, 246, 0.22) 0%, transparent 55%),
     radial-gradient(ellipse 80%  50% at 50% 120%, rgba(30,  80, 180, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 60%  30% at 20%  90%, rgba(20,  50, 140, 0.12) 0%, transparent 50%),
     radial-gradient(ellipse 60%  30% at 80%  90%, rgba(20,  50, 140, 0.12) 0%, transparent 50%),
     linear-gradient(to bottom, #000000 0%, #02081a 60%, #060e28 100%);
+  animation: starDrift 180s linear infinite;
+  animation-delay: -60s;
 }
 
-/* Layer 2: stars (animated drift) */
+/* Layer 2: medium stars — 120s orbit */
 body::after {
   content: "";
   position: fixed;
@@ -113,13 +124,85 @@ body::after {
     radial-gradient(2px 2px at 76% 67%, rgba(120,180,255,0.85) 0%, transparent 100%),
     radial-gradient(2px 2px at 33% 88%, rgba(120,180,255,0.70) 0%, transparent 100%),
     radial-gradient(2px 2px at 92% 20%, rgba(120,180,255,0.80) 0%, transparent 100%);
-  animation: starDrift 120s linear infinite;
+  animation: starDriftMed 120s linear infinite;
 }
 
-@keyframes starDrift {
-  from { transform: translateY(0px); }
-  to   { transform: translateY(-40px); }
+/* Layer 3: fast small stars — 80s orbit, different phase */
+.star-layer-3 {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 7%  17%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(1px 1px at 19% 54%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 29% 38%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 82%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 57% 29%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(1px 1px at 63% 71%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 74% 13%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 47%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 63%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1px 1px at 39% 6%,  rgba(255,255,255,0.75) 0%, transparent 100%),
+    radial-gradient(1px 1px at 14% 78%, rgba(120,180,255,0.65) 0%, transparent 100%),
+    radial-gradient(1px 1px at 66% 92%, rgba(120,180,255,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 22%, rgba(120,180,255,0.60) 0%, transparent 100%);
+  animation: starDriftFast 80s linear infinite;
+  animation-delay: -30s;
 }
+
+/* Circular orbit keyframes — no snap reset */
+@keyframes starDrift {
+  0%   { transform: translate(0px,    0px); }
+  25%  { transform: translate(12px, -20px); }
+  50%  { transform: translate(0px,  -40px); }
+  75%  { transform: translate(-12px,-20px); }
+  100% { transform: translate(0px,    0px); }
+}
+@keyframes starDriftMed {
+  0%   { transform: translate(0px,   0px); }
+  25%  { transform: translate(8px, -13px); }
+  50%  { transform: translate(0px, -25px); }
+  75%  { transform: translate(-8px,-13px); }
+  100% { transform: translate(0px,   0px); }
+}
+@keyframes starDriftFast {
+  0%   { transform: translate(0px,  0px); }
+  25%  { transform: translate(4px, -6px); }
+  50%  { transform: translate(0px,-12px); }
+  75%  { transform: translate(-4px,-6px); }
+  100% { transform: translate(0px,  0px); }
+}
+
+/* ─── Ambient Animations ───────────────────────────────── */
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.08); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.85) translateY(8px); }
+  100% { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+.hero-glow { animation: glowPulse 6s ease-in-out infinite; }
+.hero-logo  { animation: floatY   4s ease-in-out infinite; }
 
 /* Ensure all content sits above starfield */
 body > * {
@@ -155,10 +238,10 @@ body > * {
 
 /* Glassmorphism card — use everywhere instead of bg-surface */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .glass-card-hover {
@@ -168,11 +251,28 @@ body > * {
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.22,1,0.36,1);
   will-change: transform;
+  position: relative;
+  overflow: hidden;
 }
 .glass-card-hover:hover {
   transform: translateY(-2px);
   border-color: rgba(91, 156, 246, 0.25);
   box-shadow: 0 12px 40px rgba(91, 156, 246, 0.10), 0 0 0 1px rgba(91, 156, 246, 0.12);
+}
+.glass-card-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.glass-card-hover:hover::after {
+  opacity: 1;
+  animation: shimmer 1.2s ease-out;
 }
 
 /* Legacy card-hover kept for compatibility */
@@ -209,6 +309,8 @@ body > * {
   width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(91,156,246,0.3) 30%, rgba(91,156,246,0.3) 70%, transparent 100%);
+  transform-origin: left;
+  animation: lineGrow 1s cubic-bezier(0.22,1,0.36,1) both;
 }
 
 /* Hero radial glow */
@@ -236,13 +338,14 @@ body > * {
 .explore-link {
   position: relative;
   overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .explore-link::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(91, 156, 246, 0.06) 0%, rgba(91, 156, 246, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(91, 156, 246, 0.10) 0%, rgba(91, 156, 246, 0.05) 100%);
   transform: translateX(-100%);
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 0;
@@ -250,8 +353,8 @@ body > * {
 }
 .explore-link:hover::before { transform: translateX(0); }
 .explore-link:hover {
-  border-color: rgba(91, 156, 246, 0.25);
-  box-shadow: 0 4px 20px rgba(91, 156, 246, 0.07);
+  border-color: rgba(91, 156, 246, 0.45);
+  box-shadow: 0 4px 24px rgba(91, 156, 246, 0.12);
 }
 .explore-link > * { position: relative; z-index: 1; }
 
@@ -263,7 +366,7 @@ body > * {
 }
 .btn-primary:hover {
   transform: scale(1.025);
-  box-shadow: 0 4px 28px rgba(91, 156, 246, 0.45);
+  box-shadow: 0 0 48px rgba(91, 156, 246, 0.7), 0 4px 20px rgba(0,0,0,0.4);
 }
 .btn-primary:active { transform: scale(0.97); }
 
@@ -273,7 +376,7 @@ body > * {
 }
 .btn-outline:hover {
   transform: scale(1.025);
-  box-shadow: 0 4px 20px rgba(91, 156, 246, 0.15);
+  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.12);
 }
 .btn-outline:active { transform: scale(0.97); }
 
@@ -291,6 +394,7 @@ body > * {
   font-family: var(--font-jetbrains), ui-monospace, monospace;
   font-size: 1.35rem;
   font-weight: 600;
+  animation: popIn 0.5s cubic-bezier(0.22,1,0.36,1) both;
   color: #ffffff;
   letter-spacing: -0.02em;
 }

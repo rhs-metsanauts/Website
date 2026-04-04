@@ -126,7 +126,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-16 pb-20 sm:pt-20 sm:pb-28 px-3 overflow-hidden">
+      <section className="relative pt-8 pb-20 sm:pt-10 sm:pb-28 px-3 overflow-hidden">
         {/* Atmospheric glow — stronger, dual layer */}
         <div className="hero-glow" />
         <div
@@ -144,8 +144,8 @@ export default function Home() {
 
           <FadeIn delay={60}>
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 flex items-center justify-center">
-                <Image src="/logo.png" alt="METSAnauts" width={56} height={56} className="object-contain" />
+              <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 hero-logo">
+                <Image src="/logo.png" alt="METSAnauts" width={56} height={56} className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="tech-label !text-[11px] tracking-[0.18em] text-blue">NASA HUNCH Program</p>
@@ -177,13 +177,14 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/mission"
-                className="btn-primary px-8 py-4 text-base font-bold bg-blue text-white rounded-xl cursor-pointer shadow-[0_0_32px_rgba(91,156,246,0.5)] hover:shadow-[0_0_48px_rgba(91,156,246,0.7)]"
+                className="inline-flex items-center justify-center px-9 py-4 text-base font-bold rounded-xl cursor-pointer"
+                style={{ background: "linear-gradient(135deg, #5b9cf6 0%, #3b82f6 100%)", color: "#fff", boxShadow: "0 0 40px rgba(91,156,246,0.6), 0 4px 20px rgba(0,0,0,0.4)" }}
               >
                 Read our mission
               </Link>
               <Link
                 href="/rover-systems"
-                className="btn-outline px-8 py-4 text-base font-semibold text-white border-2 border-white/25 rounded-xl hover:border-blue/60 hover:bg-blue/10 hover:text-blue cursor-pointer"
+                className="inline-flex items-center justify-center px-9 py-4 text-base font-semibold rounded-xl cursor-pointer border-2 border-white/60 text-white bg-white/10 hover:bg-white/20 hover:border-white transition-all duration-200"
               >
                 Rover systems
               </Link>
