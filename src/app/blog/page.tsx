@@ -94,7 +94,7 @@ function renderBlock(block: ContentBlock, idx: number) {
       return (
         <blockquote
           key={idx}
-          className="border-l-2 border-blue/50 pl-5 py-0.5 text-blue/90 text-[1.04rem] leading-relaxed italic"
+          className="border-l-2 border-blue/50 pl-5 py-1 bg-blue-soft rounded-r-lg text-blue/90 text-[1.04rem] leading-relaxed italic"
         >
           {block.text}
         </blockquote>
@@ -132,8 +132,8 @@ function renderBlock(block: ContentBlock, idx: number) {
 // ─── Page ────────────────────────────────────────────────────────────────────
 export default function BlogPage() {
   return (
-    <div className="py-20 sm:py-28 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="py-14 sm:py-20 px-3">
+      <div className="max-w-[1400px] mx-auto">
 
         {/* Header */}
         <FadeIn>

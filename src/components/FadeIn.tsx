@@ -15,6 +15,14 @@ export default function FadeIn({ children, className = "", delay = 0 }: FadeInPr
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Skip animation if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,7 +30,7 @@ export default function FadeIn({ children, className = "", delay = 0 }: FadeInPr
           observer.unobserve(el);
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -34,8 +42,8 @@ export default function FadeIn({ children, className = "", delay = 0 }: FadeInPr
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0) scale(1)" : "translateY(28px) scale(0.97)",
-        transition: `opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
+        transform: visible ? "translateY(0) scale(1)" : "translateY(24px) scale(0.975)",
+        transition: `opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
         willChange: "opacity, transform",
       }}
     >

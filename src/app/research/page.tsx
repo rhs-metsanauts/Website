@@ -12,7 +12,7 @@ export default function ResearchPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">Technical Overview</h1>
           <p className="text-text-muted mb-12">
-            METSAnauts — NASA HUNCH, FDR 2026
+            METSAnauts · NASA HUNCH · FDR 2026
           </p>
         </FadeIn>
 
@@ -22,7 +22,7 @@ export default function ResearchPage() {
               The METSAnauts project delivers a fleet of four small rovers and a companion terrain
               simulation for use inside NASA&apos;s HERA analog habitat at Johnson Space Center.
               The system is designed for non-technical astronaut crew: a web-based control interface
-              — including an AI-powered natural language mode — lets crew operate rovers without
+              (including an AI-powered natural language mode) that lets crew operate rovers without
               robotics experience.
             </p>
             <p className="text-text-muted">

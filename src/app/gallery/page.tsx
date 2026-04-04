@@ -18,32 +18,44 @@ const photos = [
 
 export default function GalleryPage() {
   return (
-    <div className="py-20 sm:py-28 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="py-14 sm:py-20 px-3">
+      <div className="max-w-[1400px] mx-auto">
+
         <FadeIn>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-10 bg-blue/40" />
             <span className="tech-label !text-xs">Gallery</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-12 tracking-tight">Photo Archive</h1>
+          <h1 className="text-3xl sm:text-5xl font-bold text-text-bright mb-3 tracking-tight">
+            Photo Archive
+          </h1>
+          <p className="text-text-muted mb-12 text-base">
+            Rovers, terrain, builds, and the team behind it all.
+          </p>
         </FadeIn>
 
         <div className="columns-2 sm:columns-3 gap-3 space-y-3">
           {photos.map((photo, i) => (
-            <FadeIn key={i} delay={i * 50}>
-              <div className="relative w-full overflow-hidden rounded-xl border border-border break-inside-avoid">
+            <FadeIn key={i} delay={Math.min(i * 40, 300)}>
+              <div className="group relative w-full overflow-hidden rounded-xl border border-border break-inside-avoid cursor-pointer">
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   width={800}
                   height={600}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover photo-subtle transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 50vw, 33vw"
+                  loading="lazy"
                 />
+                {/* Caption overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <p className="text-xs text-text-muted leading-snug">{photo.alt}</p>
+                </div>
               </div>
             </FadeIn>
           ))}
         </div>
+
       </div>
     </div>
   );

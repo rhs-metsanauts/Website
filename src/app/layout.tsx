@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth`}>
       <body className={`${spaceGrotesk.className} antialiased`}>
         <Navbar />
-        <main className="pt-16">{children}</main>
+        <main className="pt-14">{children}</main>
         <Footer />
       </body>
     </html>

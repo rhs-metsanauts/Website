@@ -12,7 +12,7 @@ export default function BothScapePage() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-text-bright mb-4 tracking-tight">BothScape</h1>
           <p className="text-text-muted mb-12">
-            8 ft &times; 8 ft simulation terrain &mdash; 2 ft &times; 2 ft modular sections built from
+            8 ft &times; 8 ft simulation terrain 2 ft &times; 2 ft modular sections built from
             foamboard, foam gap filler, and diatomaceous earth regolith.
           </p>
         </FadeIn>
@@ -28,7 +28,7 @@ export default function BothScapePage() {
             <span className="tech-label !text-[11px] text-amber/70">Lunar</span>
             <div className="h-px flex-1 bg-border" />
           </div>
-          <h2 className="text-xl font-bold text-text-bright mb-3">Moon region &mdash; Shackleton Crater</h2>
+          <h2 className="text-xl font-bold text-text-bright mb-3">Moon region Shackleton Crater</h2>
           <p className="text-sm text-text-muted leading-relaxed mb-4">
             Models the lunar south pole with permanent shadow zones. Reflective walls simulate
             hydrogen-rich areas detected by probes. Used to test rover navigation in low-light
@@ -44,7 +44,7 @@ export default function BothScapePage() {
             <span className="tech-label !text-[11px] text-amber/70">Martian</span>
             <div className="h-px flex-1 bg-border" />
           </div>
-          <h2 className="text-xl font-bold text-text-bright mb-3">Mars region &mdash; ancient terrain</h2>
+          <h2 className="text-xl font-bold text-text-bright mb-3">Mars region ancient terrain</h2>
           <p className="text-sm text-text-muted leading-relaxed mb-4">
             Smoother, more eroded terrain reflecting Mars&apos; older surface. Regolith mimics basaltic
             volcanic soil with fine, dusty textures. Includes ancient channel features and lava plains.
