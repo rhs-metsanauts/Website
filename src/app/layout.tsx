@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className={`${spaceGrotesk.className} antialiased`}>
+      <body className={`${spaceGrotesk.className} antialiased`} suppressHydrationWarning>
         <div className="star-layer-3" aria-hidden="true" style={{ position: "fixed", pointerEvents: "none", zIndex: 0 }} />
         <Navbar />
         <main className="pt-[64px]">{children}</main>
