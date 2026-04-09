@@ -32,7 +32,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-2">
       {/* Floating bar */}
       <div
-        className={`relative max-w-[1400px] mx-auto h-14 flex items-center pt-12 px-3 rounded-2xl border transition-all duration-300 ${
+        className={`relative max-w-[1400px] mx-auto h-14 flex items-center px-3 rounded-2xl border transition-all duration-300 ${
           scrolled
             ? "bg-black/80 backdrop-blur-xl border-white/15"
             : "bg-black/50 backdrop-blur-md border-white/10"

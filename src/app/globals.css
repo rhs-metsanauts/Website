@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background-color: #02081a;
   color: var(--color-text);
   font-family: var(--font-barlow), system-ui, sans-serif;
   font-size: 17px;
@@ -71,7 +71,7 @@ body::before {
     radial-gradient(ellipse 80%  50% at 50% 120%, rgba(30,  80, 180, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 60%  30% at 20%  90%, rgba(20,  50, 140, 0.12) 0%, transparent 50%),
     radial-gradient(ellipse 60%  30% at 80%  90%, rgba(20,  50, 140, 0.12) 0%, transparent 50%),
-    linear-gradient(to bottom, #000000 0%, #02081a 60%, #060e28 100%);
+    linear-gradient(to bottom, #02081a 0%, #060e28 60%, #080f2e 100%);
   animation: starDrift 180s linear infinite;
   animation-delay: -60s;
 }
