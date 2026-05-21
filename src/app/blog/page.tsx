@@ -59,7 +59,20 @@ const posts: Post[] = [
       },
       {
         type: "text",
-        body: "The trip didn't go unnoticed. Houston news picked up our story, taking us from a locally covered team to one recognized across the state of Texas. It's a proud moment for the whole team and our mentors.",
+        body: (
+          <>
+            Before heading to Houston, we were featured on{" "}
+            <a
+              href="https://www.nbcdfw.com/news/local/carter-in-the-classroom/ranchview-high-school-students-nasa-design-space-travel/4015090/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors"
+            >
+              NBC 5 DFW
+            </a>{" "}
+            as part of their <em>Carter in the Classroom</em> segment — putting our team on the local Dallas-Fort Worth radar. Then the Houston trip picked up state-wide coverage, taking us from a locally covered team to one recognized across the state of Texas. It&apos;s a proud moment for the whole team and our mentors.
+          </>
+        ),
       },
       {
         type: "heading",
