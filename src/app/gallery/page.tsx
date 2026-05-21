@@ -1,6 +1,16 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
+const videos = [
+  { src: "/videos/IMG_2139.mp4", label: "Testing clip 1" },
+  { src: "/videos/IMG_2137.mp4", label: "Testing clip 2" },
+  { src: "/videos/IMG_2703.mp4", label: "Testing clip 3" },
+  { src: "/videos/IMG_2702.mp4", label: "Testing clip 4" },
+  { src: "/videos/IMG_2700.mp4", label: "Testing clip 5" },
+  { src: "/videos/IMG_2701.mp4", label: "Testing clip 6" },
+  { src: "/videos/IMG_2138.mp4", label: "Testing clip 7" },
+];
+
 const photos = [
   { src: "/images/IMG_1583.jpg", alt: "Rover with tread wheels on terrain" },
   { src: "/images/IMG_4146_b.jpg", alt: "Team controlling rover with laptop outdoors" },
@@ -47,10 +57,40 @@ export default function GalleryPage() {
                   sizes="(max-width: 640px) 50vw, 33vw"
                   loading="lazy"
                 />
-                {/* Caption overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                   <p className="text-xs text-text-muted leading-snug">{photo.alt}</p>
                 </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        {/* Testing Videos */}
+        <FadeIn>
+          <div className="flex items-center gap-3 mt-20 mb-6">
+            <div className="h-px w-10 bg-blue/40" />
+            <span className="tech-label !text-xs">Testing Videos</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-bold text-text-bright mb-3 tracking-tight">
+            Testing Videos
+          </h2>
+          <p className="text-text-muted mb-10 text-base">
+            Raw footage from rover testing sessions.
+          </p>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {videos.map((video, i) => (
+            <FadeIn key={i} delay={Math.min(i * 40, 300)}>
+              <div className="rounded-xl overflow-hidden border border-border bg-bg-card">
+                <video
+                  src={video.src}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full aspect-video object-cover"
+                />
+                <p className="text-xs text-text-muted px-3 py-2">{video.label}</p>
               </div>
             </FadeIn>
           ))}

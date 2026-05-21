@@ -27,6 +27,55 @@ type Post = {
 // To add a real image, set src: "/images/your-photo.jpg" — otherwise it shows a placeholder.
 const posts: Post[] = [
   {
+    id: "5",
+    date: "May 20, 2026",
+    tag: "Team Update",
+    title: "We presented at Johnson Space Center — and the room was full of astronauts.",
+    author: "METSAnauts",
+    content: [
+      {
+        type: "text",
+        body: "Things have been moving at full speed, and this one deserves its own post.",
+      },
+      {
+        type: "heading",
+        text: "Houston, we have a presentation.",
+      },
+      {
+        type: "text",
+        body: "Last week, the METSAnauts traveled to NASA's Johnson Space Center in Houston to present our project to some of the brightest minds in space exploration. We walked engineers, executives, and current and training astronauts through everything we've built — the rover, the systems behind it, and the mission that drives us. Hearing their feedback and fielding their questions in that room was something we won't forget.",
+      },
+      {
+        type: "heading",
+        text: "The interviews.",
+      },
+      {
+        type: "text",
+        body: "We were pulled aside throughout the day for one-on-one conversations with NASA engineers and leadership. Each one pushed us to think deeper about our work — from the technical details of our rover design to the bigger picture of what analog missions mean for the future of space exploration.",
+      },
+      {
+        type: "heading",
+        text: "We made the news — statewide.",
+      },
+      {
+        type: "text",
+        body: "The trip didn't go unnoticed. Houston news picked up our story, taking us from a locally covered team to one recognized across the state of Texas. It's a proud moment for the whole team and our mentors.",
+      },
+      {
+        type: "heading",
+        text: "What's next.",
+      },
+      {
+        type: "text",
+        body: "We're proud to share that we've been selected to present exclusively to the MEA — the Martian Exploration Analog team — in the coming weeks. This is a significant opportunity for us, and we're heads-down preparing to make the most of it.",
+      },
+      {
+        type: "text",
+        body: "More updates soon. Ad astra.\n\n— METSAnauts",
+      },
+    ],
+  },
+  {
     id: "4",
     date: "Mar 31, 2026",
     tag: "Team Update",
