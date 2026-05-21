@@ -214,7 +214,7 @@ export default function Home() {
           <FadeIn>
             <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border shadow-[0_8px_48px_rgba(0,0,0,0.5)]">
               <Image
-                src="/images/IMG_1583.jpg"
+                src="/images/gallery/IMG_1583.jpg"
                 alt="METSAnauts rover on terrain"
                 fill
                 className="object-cover object-center"

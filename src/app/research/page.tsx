@@ -37,7 +37,7 @@ export default function ResearchPage() {
           {
             tag: "MOBILITY",
             title: "Rover platform",
-            image: "/images/rover_subsystems.svg",
+            image: "/images/diagrams/rover_subsystems.svg",
             items: [
               "Six-wheel drive with rocker-bogie suspension for passive obstacle navigation",
               "Half-tread wheels for grip on loose and uneven terrain",
@@ -81,7 +81,7 @@ export default function ResearchPage() {
           {
             tag: "TERRAIN",
             title: "BothScape simulation",
-            image: "/images/bothscape_layout.svg",
+            image: "/images/bothscape/bothscape_layout.svg",
             items: [
               "8′ × 8′ dual-surface terrain representing lunar south pole and ancient Martian terrain",
               "Constructed from foamboard base, foam gap filler for surface features, diatomaceous earth as lunar regolith",

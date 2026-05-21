@@ -106,7 +106,7 @@ export default function MissionPage() {
         <FadeIn delay={250}>
           <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-border shadow-[0_8px_48px_rgba(0,0,0,0.5)]">
             <Image
-              src="/images/lunar_landscape.png"
+              src="/images/diagrams/lunar_landscape.png"
               alt="Lunar landscape terrain model"
               fill
               className="object-cover object-center"

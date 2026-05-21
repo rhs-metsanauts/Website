@@ -86,7 +86,7 @@ export default function TeamPage() {
         <FadeIn delay={60}>
           <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border mb-16 shadow-[0_8px_48px_rgba(0,0,0,0.5)]">
             <Image
-              src="/images/team_formal.jpg"
+              src="/images/gallery/team_formal.jpg"
               alt="METSAnauts team"
               fill
               className="object-cover object-top"

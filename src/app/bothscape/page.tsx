@@ -19,7 +19,7 @@ export default function BothScapePage() {
 
         <FadeIn delay={100}>
           <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
-            <Image src="/images/IMG_4560.jpg" alt="BothScape overview photo" fill className="object-cover object-top" />
+            <Image src="/images/bothscape/IMG_4560.jpg" alt="BothScape overview photo" fill className="object-cover object-top" />
           </div>
         </FadeIn>
 
@@ -35,7 +35,7 @@ export default function BothScapePage() {
             conditions and validate power-system behavior under constrained solar input.
           </p>
           <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
-            <Image src="/images/IMG_4561.jpg" alt="Moon region close-up" fill className="object-cover object-top" />
+            <Image src="/images/bothscape/IMG_4561.jpg" alt="Moon region close-up" fill className="object-cover object-top" />
           </div>
         </FadeIn>
 
@@ -51,7 +51,7 @@ export default function BothScapePage() {
             Tests rover endurance on dry, powdery surfaces.
           </p>
           <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden border border-border mb-14">
-            <Image src="/images/IMG_4562.jpg" alt="Mars region close-up" fill className="object-cover object-top" />
+            <Image src="/images/bothscape/IMG_4562.jpg" alt="Mars region close-up" fill className="object-cover object-top" />
           </div>
         </FadeIn>
 

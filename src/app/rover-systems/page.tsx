@@ -51,7 +51,7 @@ export default function RoverSystemsPage() {
         <FadeIn delay={100}>
           <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-border mb-14 shadow-[0_8px_48px_rgba(0,0,0,0.5)]">
             <Image
-              src="/images/IMG_0678.jpg"
+              src="/images/gallery/IMG_0678.jpg"
               alt="Rover on terrain"
               fill
               className="object-cover object-top"
@@ -129,10 +129,10 @@ export default function RoverSystemsPage() {
 
           <div className="space-y-5 mb-14">
             <div className="relative w-full aspect-[900/320] rounded-xl overflow-hidden border border-border bg-bg">
-              <Image src="/images/comms_flow.svg" alt="Communication flow diagram" fill className="object-contain" sizes="100vw" />
+              <Image src="/images/diagrams/comms_flow.svg" alt="Communication flow diagram" fill className="object-contain" sizes="100vw" />
             </div>
             <div className="relative w-full aspect-[900/400] rounded-xl overflow-hidden border border-border bg-bg">
-              <Image src="/images/rover_subsystems.svg" alt="Rover subsystems diagram" fill className="object-contain" sizes="100vw" />
+              <Image src="/images/diagrams/rover_subsystems.svg" alt="Rover subsystems diagram" fill className="object-contain" sizes="100vw" />
             </div>
           </div>
         </FadeIn>
@@ -193,7 +193,7 @@ export default function RoverSystemsPage() {
               </p>
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border">
                 <Image
-                  src="/images/rover_overhead.jpg"
+                  src="/images/gallery/rover_overhead.jpg"
                   alt="Rover overhead view"
                   fill
                   className="object-cover object-center"
@@ -214,7 +214,7 @@ export default function RoverSystemsPage() {
               </p>
               <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-border bg-bg">
                 <Image
-                  src="/images/rover_electronics.png"
+                  src="/images/diagrams/rover_electronics.png"
                   alt="Rover electronics components"
                   fill
                   className="object-contain"
