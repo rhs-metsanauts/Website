@@ -2,11 +2,9 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const fdrPhotos = [
-  { src: "/images/fdr/fdr_IMG_2012.jpg", alt: "At the Johnson Space Center entrance" },
-  { src: "/images/fdr/fdr_IMG_2013.jpg", alt: "Presenting the rover to NASA engineers" },
-  { src: "/images/fdr/fdr_IMG_2014.jpg", alt: "Team conversation with NASA staff" },
-  { src: "/images/fdr/fdr_IMG_2015.jpg", alt: "Behind the scenes at JSC" },
-  { src: "/images/fdr/fdr_IMG_2473.jpg", alt: "METSAnauts at Johnson Space Center" },
+  { src: "/images/fdr/fdr_IMG_2473.jpg", alt: "METSAnauts booth at Johnson Space Center" },
+  { src: "/images/fdr/fdr_IMG_2015.jpg", alt: "Rovers and controller setup with ZED cameras" },
+  { src: "/images/fdr/fdr_IMG_2014.jpg", alt: "Top-down view of both rovers and terrain board" },
 ];
 
 const photos = [

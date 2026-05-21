@@ -210,7 +210,7 @@ export default function BlogPage() {
         <div className="max-w-3xl">
           {posts.map((post, i) => (
             <FadeIn key={post.id} delay={i * 80}>
-              <article className="mb-12 pb-12 border-b border-border last:border-0 last:mb-0 last:pb-0">
+              <article className="mb-24 pb-24 border-b border-border last:border-0 last:mb-0 last:pb-0">
 
                 {/* Meta */}
                 <div className="flex items-center gap-3 mb-4 flex-wrap">
