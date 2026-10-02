@@ -212,6 +212,9 @@ const posts: Post[] = [
 ];
 
 // ─── Block renderer ──────────────────────────────────────────────────────────
+// On wide screens, photos and videos sit in the empty right margin beside the text.
+const marginFigure = "xl:float-right xl:clear-right xl:w-[460px] xl:-mr-[500px] xl:!mt-0 xl:mb-6";
+
 function renderBlock(block: ContentBlock, idx: number) {
   switch (block.type) {
     case "text":
@@ -240,7 +243,7 @@ function renderBlock(block: ContentBlock, idx: number) {
 
     case "image":
       return (
-        <figure key={idx}>
+        <figure key={idx} className={marginFigure}>
           {block.src ? (
             <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border">
               <Image
@@ -267,7 +270,7 @@ function renderBlock(block: ContentBlock, idx: number) {
 
     case "youtube":
       return (
-        <figure key={idx}>
+        <figure key={idx} className={marginFigure}>
           <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border bg-black">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${block.videoId}`}
@@ -344,7 +347,7 @@ export default function BlogPage() {
                 </h2>
 
                 {/* Content blocks */}
-                <div className="space-y-5">
+                <div className="space-y-5 flow-root">
                   {post.content.map((block, j) => renderBlock(block, j))}
                 </div>
 
