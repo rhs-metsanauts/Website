@@ -10,7 +10,8 @@ type ImageBlock     = { type: "image";     src?: string; alt: string; caption?: 
 type InstagramBlock = { type: "instagram"; permalink: string };
 type HighlightBlock = { type: "highlight"; text: ReactNode };
 type HeadingBlock   = { type: "heading";   text: string };
-type ContentBlock   = TextBlock | ImageBlock | InstagramBlock | HighlightBlock | HeadingBlock;
+type YouTubeBlock   = { type: "youtube";   videoId: string; title: string; caption?: string };
+type ContentBlock   = TextBlock | ImageBlock | InstagramBlock | HighlightBlock | HeadingBlock | YouTubeBlock;
 
 type Post = {
   id: string;
@@ -23,6 +24,7 @@ type Post = {
 
 // ─── Posts ───────────────────────────────────────────────────────────────────
 // Add new entries to the TOP of this array so latest posts appear first.
+// To add a YouTube video, use: { type: "youtube", videoId: "VIDEO_ID", title: "Video title" }
 // To add an Instagram post, use: { type: "instagram", permalink: "https://www.instagram.com/p/POST_ID/" }
 // To add a real image, set src: "/images/your-photo.jpg" — otherwise it shows a placeholder.
 const posts: Post[] = [
@@ -133,6 +135,80 @@ const posts: Post[] = [
       },
     ],
   },
+  {
+    id: "mark-cuban-grant",
+    date: "Mar 12, 2026",
+    tag: "Funding",
+    title: "We emailed Mark Cuban. Two hours later, we had $5,000.",
+    author: "METSAnauts",
+    content: [
+      {
+        type: "text",
+        body: "Building a fleet of rovers takes a lot more than ideas. It takes sensors, metal frames, cameras, batteries, and a lot of trips to get where we need to be. So we took a shot: we wrote directly to Mark Cuban and asked for his support.",
+      },
+      {
+        type: "highlight",
+        text: "He got back to us in about two hours. Mark Cuban Companies is backing the METSAnauts with $5,000.",
+      },
+      {
+        type: "image",
+        src: "/images/cuban/team-with-check.jpg",
+        alt: "The METSAnauts team holding the check from Mark Cuban Companies, with a rover and robotic claw",
+        caption: "The METSAnauts with the check, a rover, and our sample-collection claw. Photo: Carrollton-Farmers Branch ISD",
+      },
+      {
+        type: "heading",
+        text: "Check, please.",
+      },
+      {
+        type: "text",
+        body: "Representatives from Mark Cuban Companies came to Ranchview High School to present the check to our team in person. For five students who started with a cold email, it was a moment we won't forget.",
+      },
+      {
+        type: "image",
+        src: "/images/cuban/check-presentation.jpg",
+        alt: "The METSAnauts team with teachers, district staff, and guests at the check presentation",
+        caption: "The team with teachers, staff, and guests at the check presentation. Photo: Carrollton-Farmers Branch ISD",
+      },
+      {
+        type: "heading",
+        text: "Where the money goes.",
+      },
+      {
+        type: "text",
+        body: "The funding goes straight into our NASA HUNCH project: an AI-powered rover swarm for NASA's Human Exploration Research Analog (HERA) and future Mars missions. It covers parts for multiple rover prototypes, the materials for our BothScape lunar and Martian training terrain, and travel as we take the project to NASA.",
+      },
+      {
+        type: "heading",
+        text: "In the news.",
+      },
+      {
+        type: "text",
+        body: (
+          <>
+            Our story was shared by{" "}
+            <a href="https://www.cfbisd.edu/about-us/news/story/~board/all-district-news/post/ranchview-students-land-5000-from-mark-cuban-to-power-nasa-robotics-project" target="_blank" rel="noopener noreferrer" className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors">Carrollton-Farmers Branch ISD</a>{" "}
+            and covered by{" "}
+            <a href="https://www.wfaa.com/article/entertainment/events/america-250/north-texas-students-land-nasa-opportunity-with-mark-cuban-boost/287-da60f3d7-d0f9-4d3e-9cf0-901892e0d88e" target="_blank" rel="noopener noreferrer" className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors">WFAA</a>.
+          </>
+        ),
+      },
+      {
+        type: "youtube",
+        videoId: "-kX58EAIgJM",
+        title: "Red, White & You: Mark Cuban helping Irving HS students shape the future of space exploration",
+        caption: "Our interview with WFAA: \"Red, White & You: Mark Cuban helping Irving HS students shape the future of space exploration.\"",
+      },
+      {
+        type: "text",
+        body: "Thank you to Mark Cuban and Mark Cuban Companies for believing in us, and to our CTE engineering teacher, Mr. David Berry, for supporting us every step of the way.",
+      },
+      {
+        type: "text",
+        body: "Ad astra. — METSAnauts",
+      },
+    ],
+  },
 ];
 
 // ─── Block renderer ──────────────────────────────────────────────────────────
@@ -188,6 +264,28 @@ function renderBlock(block: ContentBlock, idx: number) {
 
     case "instagram":
       return <InstagramEmbed key={idx} permalink={block.permalink} />;
+
+    case "youtube":
+      return (
+        <figure key={idx}>
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border bg-black">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${block.videoId}`}
+              title={block.title}
+              className="absolute inset-0 w-full h-full"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-2.5 text-xs text-text-muted/60 text-center">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
   }
 }
 
@@ -223,7 +321,7 @@ export default function BlogPage() {
         <div className="max-w-3xl">
           {posts.map((post, i) => (
             <FadeIn key={post.id} delay={i * 80} className="block mb-24 pb-24 border-b border-border last:border-0 last:mb-0 last:pb-0">
-              <article>
+              <article id={`post-${post.id}`} className="scroll-mt-24">
 
                 {/* Meta */}
                 <div className="flex items-center gap-3 mb-4 flex-wrap">
