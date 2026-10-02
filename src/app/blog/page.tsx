@@ -29,6 +29,76 @@ type Post = {
 // To add a real image, set src: "/images/your-photo.jpg" — otherwise it shows a placeholder.
 const posts: Post[] = [
   {
+    id: "goals-2026",
+    date: "Oct 1, 2026",
+    tag: "Mission Update",
+    title: "A new year, the same mission: here's what we're building for HERA.",
+    author: "METSAnauts",
+    content: [
+      {
+        type: "text",
+        body: "A new school year means a fresh start, and we're ready to get back to work. Our NASA HUNCH project has one big purpose: helping the people who will one day explore the Moon and Mars. The crews inside NASA's HERA habitat at Johnson Space Center are teachers, geologists, and specialists, not necessarily engineers. We want to give them rovers they can actually use, on terrain that feels like the real thing.",
+      },
+      {
+        type: "highlight",
+        text: "Five goals, one mission: make exploring another world feel real, right here on Earth.",
+      },
+      {
+        type: "heading",
+        text: "01 · Build a world to explore.",
+      },
+      {
+        type: "text",
+        body: "Our first goal is an accurate 8 ft × 8 ft lunar environment where our rovers can navigate and carry out tasks. We call it BothScape, because it models both the lunar south pole and ancient Martian terrain, using foamboard, foam gap filler, and diatomaceous earth as regolith.",
+      },
+      {
+        type: "heading",
+        text: "02 · Build rovers that do real work.",
+      },
+      {
+        type: "text",
+        body: "We're building physical rovers capable of mining, support, and reconnaissance missions. Our design uses six-wheel drive with half-tread grip, rocker-bogie suspension, a robotic sample-collection claw, and Raspberry Pi control. Our goal is a fleet of four.",
+      },
+      {
+        type: "heading",
+        text: "03 · Put them to the test.",
+      },
+      {
+        type: "text",
+        body: "A rover that works on a table isn't enough. We'll test how ours perform in mock lunar and Martian conditions, so we know they can handle rough ground before anyone depends on them.",
+      },
+      {
+        type: "heading",
+        text: "04 · Make it feel like a real mission.",
+      },
+      {
+        type: "text",
+        body: "We want to immerse astronauts in a realistic mission experience. Scouting terrain, collecting samples, and coordinating rovers should feel like the work they'd actually do on the Moon or Mars.",
+      },
+      {
+        type: "heading",
+        text: "05 · Keep the controls simple.",
+      },
+      {
+        type: "text",
+        body: "None of this matters if the crew can't use it. We're building a user-friendly way to control and adjust the rovers: a web app where non-technical crew can send commands, with an AI-powered interface that turns plain language into control code. Our rovers communicate over LoRa, WiFi, and Bluetooth.",
+      },
+      {
+        type: "text",
+        body: (
+          <>
+            Want the full picture? Read more on our{" "}
+            <a href="/mission" className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors">Mission page</a>. We&apos;ll be posting updates here all year as we build, test, and learn. Ad astra.
+          </>
+        ),
+      },
+      {
+        type: "text",
+        body: "— METSAnauts",
+      },
+    ],
+  },
+  {
     id: "5",
     date: "May 20, 2026",
     tag: "Team Update",
@@ -212,9 +282,6 @@ const posts: Post[] = [
 ];
 
 // ─── Block renderer ──────────────────────────────────────────────────────────
-// On wide screens, photos and videos sit in the empty right margin beside the text.
-const marginFigure = "xl:float-right xl:clear-right xl:w-[460px] xl:-mr-[500px] xl:!mt-0 xl:mb-6";
-
 function renderBlock(block: ContentBlock, idx: number) {
   switch (block.type) {
     case "text":
@@ -243,7 +310,7 @@ function renderBlock(block: ContentBlock, idx: number) {
 
     case "image":
       return (
-        <figure key={idx} className={marginFigure}>
+        <figure key={idx} className="max-w-3xl mx-auto">
           {block.src ? (
             <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border">
               <Image
@@ -270,7 +337,7 @@ function renderBlock(block: ContentBlock, idx: number) {
 
     case "youtube":
       return (
-        <figure key={idx} className={marginFigure}>
+        <figure key={idx} className="max-w-3xl mx-auto">
           <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-border bg-black">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${block.videoId}`}
@@ -321,7 +388,7 @@ export default function BlogPage() {
         </FadeIn>
 
         {/* Feed */}
-        <div className="max-w-3xl">
+        <div>
           {posts.map((post, i) => (
             <FadeIn key={post.id} delay={i * 80} className="block mb-24 pb-24 border-b border-border last:border-0 last:mb-0 last:pb-0">
               <article id={`post-${post.id}`} className="scroll-mt-24">
@@ -347,7 +414,7 @@ export default function BlogPage() {
                 </h2>
 
                 {/* Content blocks */}
-                <div className="space-y-5 flow-root">
+                <div className="space-y-5">
                   {post.content.map((block, j) => renderBlock(block, j))}
                 </div>
 
