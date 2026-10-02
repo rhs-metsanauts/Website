@@ -144,11 +144,11 @@ const posts: Post[] = [
     content: [
       {
         type: "text",
-        body: "Building a fleet of rovers takes a lot more than ideas. It takes sensors, metal frames, cameras, batteries, and a lot of trips to get where we need to be. So we took a shot: we wrote directly to Mark Cuban and asked for his support.",
+        body: "We'll be honest: building a fleet of rovers as a high school team is expensive. Every prototype needs sensors, metal frames, cameras, and batteries, and every trip to show our work costs money too. We had big plans and a small budget. So we decided to take a shot. We wrote an email straight to Mark Cuban, told him what we were building, and asked if he'd help.",
       },
       {
         type: "highlight",
-        text: "He got back to us in about two hours. Mark Cuban Companies is backing the METSAnauts with $5,000.",
+        text: "We figured we might never hear back. About two hours later, we had an answer: Mark Cuban Companies would back the METSAnauts with $5,000.",
       },
       {
         type: "image",
@@ -162,7 +162,7 @@ const posts: Post[] = [
       },
       {
         type: "text",
-        body: "Representatives from Mark Cuban Companies came to Ranchview High School to present the check to our team in person. For five students who started with a cold email, it was a moment we won't forget.",
+        body: "Getting the email was one thing. Then representatives from Mark Cuban Companies came to Ranchview High School to hand us the check in person, with our rover and claw on the table in front of us. Standing up there as five students who started with one cold email, it finally felt real. It's a moment none of us will forget.",
       },
       {
         type: "image",
@@ -176,7 +176,7 @@ const posts: Post[] = [
       },
       {
         type: "text",
-        body: "The funding goes straight into our NASA HUNCH project: an AI-powered rover swarm for NASA's Human Exploration Research Analog (HERA) and future Mars missions. It covers parts for multiple rover prototypes, the materials for our BothScape lunar and Martian training terrain, and travel as we take the project to NASA.",
+        body: "Every dollar goes back into the project we care about: an AI-powered rover swarm for NASA's Human Exploration Research Analog (HERA) and future Mars missions. For us, that means parts for more rover prototypes, materials to build out our BothScape lunar and Martian terrain, and the travel it takes to bring our work to NASA. Things we used to put on a wish list are now on our build list.",
       },
       {
         type: "heading",
@@ -186,7 +186,7 @@ const posts: Post[] = [
         type: "text",
         body: (
           <>
-            Our story was shared by{" "}
+            We never expected anyone outside our school to notice. Our story was shared by{" "}
             <a href="https://www.cfbisd.edu/about-us/news/story/~board/all-district-news/post/ranchview-students-land-5000-from-mark-cuban-to-power-nasa-robotics-project" target="_blank" rel="noopener noreferrer" className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors">Carrollton-Farmers Branch ISD</a>{" "}
             and covered by{" "}
             <a href="https://www.wfaa.com/article/entertainment/events/america-250/north-texas-students-land-nasa-opportunity-with-mark-cuban-boost/287-da60f3d7-d0f9-4d3e-9cf0-901892e0d88e" target="_blank" rel="noopener noreferrer" className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors">WFAA</a>.
@@ -201,7 +201,7 @@ const posts: Post[] = [
       },
       {
         type: "text",
-        body: "Thank you to Mark Cuban and Mark Cuban Companies for believing in us, and to our CTE engineering teacher, Mr. David Berry, for supporting us every step of the way.",
+        body: "To Mark Cuban and Mark Cuban Companies: thank you for taking a chance on five students and an email. And to our CTE engineering teacher, Mr. David Berry: thank you for pushing us, backing us, and being there every step of the way. We're going to make this count.",
       },
       {
         type: "text",
