@@ -227,6 +227,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mark Cuban grant */}
+      <section className="px-3 pt-4 pb-4">
+        <div className="max-w-[1400px] mx-auto">
+          <FadeIn>
+            <Link
+              href="/blog#post-mark-cuban-grant"
+              className="explore-link group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 sm:p-7 rounded-2xl glass-card glow-border cursor-pointer"
+            >
+              <div className="flex items-center gap-5">
+                <p className="stat-value !text-3xl sm:!text-4xl shrink-0">$5,000</p>
+                <div>
+                  <p className="tech-label !text-[10px] text-blue mb-1">Funding &middot; March 2026</p>
+                  <p className="text-base sm:text-lg font-semibold text-text-bright">
+                    Backed by Mark Cuban
+                  </p>
+                  <p className="text-sm text-text-muted mt-0.5">
+                    We emailed Mark Cuban asking for support. He answered in two hours with $5,000 for our NASA HUNCH project.
+                  </p>
+                </div>
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue shrink-0">
+                Read the story
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* What we're building */}
       <section className="py-16 px-3 border-t border-border">
         <div className="max-w-[1400px] mx-auto">
