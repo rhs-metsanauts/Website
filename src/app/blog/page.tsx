@@ -32,65 +32,60 @@ const posts: Post[] = [
     id: "goals-2026",
     date: "Oct 1, 2026",
     tag: "Mission Update",
-    title: "A new year, the same mission: here's what we're building for HERA.",
+    title: "This year's mission: building a piece of Mars for NASA's HERA crews.",
     author: "METSAnauts",
     content: [
       {
         type: "text",
-        body: "A new school year means a fresh start, and we're ready to get back to work. Our NASA HUNCH project has one big purpose: helping the people who will one day explore the Moon and Mars. The crews inside NASA's HERA habitat at Johnson Space Center are teachers, geologists, and specialists, not necessarily engineers. We want to give them rovers they can actually use, on terrain that feels like the real thing.",
+        body: "Inside NASA's Human Exploration Research Analog (HERA) at Johnson Space Center, crews called HERAnauts live in isolation for 45 days at a time to prepare for life in deep space. NASA wants those missions to feel as real as possible, with exploration activities that keep the crew immersed while still following mission protocols and communication delays. This year, that's our job: an 8 ft × 8 ft Martian landscape and a team of robots the crew can drive on it, remotely, from inside the habitat.",
       },
       {
         type: "highlight",
-        text: "Five goals, one mission: make exploring another world feel real, right here on Earth.",
+        text: "The mission: take a CubeSat from the HERA facility, drive it across Mars, and set it down at its destination, all without the crew ever leaving the habitat.",
       },
       {
         type: "heading",
-        text: "01 · Build a world to explore.",
+        text: "01 · A piece of Mars, 8 ft × 8 ft.",
       },
       {
         type: "text",
-        body: "Our first goal is an accurate 8 ft × 8 ft lunar environment where our rovers can navigate and carry out tasks. We call it BothScape, because it models both the lunar south pole and ancient Martian terrain, using foamboard, foam gap filler, and diatomaceous earth as regolith.",
+        body: "Our landscape will cover 8 ft × 8 ft, with side walls at least 3 ft tall, and fold into 4 ft × 4 ft sections so it can be packed away and stored at the HERA facility. The surface will model real Martian crater formations, including a crater-within-a-crater, with 3D-printed rocks, boulders, stones, and a regolith simulant to match the look and texture of the Martian ground. Pieces like hills, craters, and even mining or water-recovery sites can be moved around, so every mission can take place somewhere new.",
       },
       {
         type: "heading",
-        text: "02 · Build rovers that do real work.",
+        text: "02 · Never break the illusion.",
       },
       {
         type: "text",
-        body: "We're building physical rovers capable of mining, support, and reconnaissance missions. Our design uses six-wheel drive with half-tread grip, rocker-bogie suspension, a robotic sample-collection claw, and Raspberry Pi control. Our goal is a fleet of four.",
+        body: "If a robot's camera catches a ceiling, a wall, or the sky over Texas, the simulation is over. So we're designing visual barriers and a backdrop that keep the robots' cameras looking at Mars and nothing else, even when they climb out of a crater or bump over a rock. We're also building in lighting for both day and night operations.",
       },
       {
         type: "heading",
-        text: "03 · Put them to the test.",
+        text: "03 · Four robots, four jobs.",
       },
       {
         type: "text",
-        body: "A rover that works on a table isn't enough. We'll test how ours perform in mock lunar and Martian conditions, so we know they can handle rough ground before anyone depends on them.",
+        body: "The plan calls for four specialized robots. A transport robot carries a 10 cm CubeSat weighing 0.5 to 1 lb across the terrain. A manipulation robot uses an arm to lift the CubeSat and place it precisely, including handing it off between robots. Two support robots fill in around them with complementary capabilities. Every robot is controlled over Bluetooth from up to 100 meters away from the HERA module, and carries a camera, with standard and infrared options, that records to an SD card.",
       },
       {
         type: "heading",
-        text: "04 · Make it feel like a real mission.",
+        text: "04 · Mission control for the crew.",
       },
       {
         type: "text",
-        body: "We want to immerse astronauts in a realistic mission experience. Scouting terrain, collecting samples, and coordinating rovers should feel like the work they'd actually do on the Moon or Mars.",
+        body: "HERAnauts won't be engineers with a remote in their hands. They'll drive the robots from a laptop or computer with multiple screens, one for each robot, using live video, monitoring tools, and data logging. Smart features could take it even further, like letting the robots scan the terrain on their own while the crew watches the results, or step in for a rescue if something goes wrong.",
       },
       {
         type: "heading",
-        text: "05 · Keep the controls simple.",
+        text: "05 · Test it like a real mission.",
       },
       {
         type: "text",
-        body: "None of this matters if the crew can't use it. We're building a user-friendly way to control and adjust the rovers: a web app where non-technical crew can send commands, with an AI-powered interface that turns plain language into control code. Our rovers communicate over LoRa, WiFi, and Bluetooth.",
+        body: "Before any of this reaches HERA, we'll put it through mission scenarios of our own: day and night operations, communication system checks, emergency procedures, and real people trying out the controls to make sure they're easy to use.",
       },
       {
         type: "text",
-        body: (
-          <>
-            Want the full picture? Read more on our{" "}
-            <a href="/mission" className="text-blue font-semibold underline underline-offset-2 hover:text-blue/80 transition-colors">Mission page</a>. We&apos;ll be posting updates here all year as we build, test, and learn. Ad astra.
-          </>
-        ),
+        body: "It's a big list, and we can't wait to start checking it off. We'll be posting updates here all year as we build, test, and learn. Ad astra.",
       },
       {
         type: "text",
