@@ -1,4 +1,3 @@
-import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 // Listed alphabetically by last name.
@@ -28,21 +27,6 @@ export default function TeamPage() {
           <div className="flex flex-wrap gap-3 mb-14">
             <span className="tech-label !text-[10px] px-2.5 py-1 rounded border border-blue/20 bg-blue-muted text-blue">NASA HUNCH Program</span>
             <span className="tech-label !text-[10px] px-2.5 py-1 rounded border border-blue/20 bg-blue-muted text-blue">FDR 2026</span>
-          </div>
-        </FadeIn>
-
-        {/* Group photo */}
-        <FadeIn delay={60}>
-          <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-border mb-16 shadow-[0_8px_48px_rgba(0,0,0,0.5)]">
-            <Image
-              src="/images/gallery/team_formal.jpg"
-              alt="METSAnauts team"
-              fill
-              className="object-cover object-top"
-              sizes="100vw"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg/40 via-transparent to-transparent pointer-events-none" />
           </div>
         </FadeIn>
 
