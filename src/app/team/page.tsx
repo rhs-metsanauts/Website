@@ -1,64 +1,13 @@
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
-const members = [
-  {
-    name: "Neil Rao",
-    initials: "NR",
-    role: "Design Lead & BothScape Builder",
-    desc: (
-      <>
-        Drives the overall <strong className="text-blue font-semibold">design vision</strong> for the project and leads construction of{" "}
-        <strong className="text-blue font-semibold">BothScape</strong> — the 8′ × 8′ dual-surface terrain simulation replicating the{" "}
-        <strong className="text-blue font-semibold">lunar south pole</strong> and ancient Martian terrain. Responsible for material selection, structural layout, and mission fidelity.
-      </>
-    ),
-  },
-  {
-    name: "Arnav Sangle",
-    initials: "AS",
-    role: "Software Lead",
-    desc: (
-      <>
-        Architects and develops the <strong className="text-blue font-semibold">rover software suite</strong>, including the web-based{" "}
-        <strong className="text-blue font-semibold">astronaut control interface</strong> and the{" "}
-        <strong className="text-blue font-semibold">AI-powered natural language command mode</strong>. Maintains the codebase and leads the team&apos;s web presence.
-      </>
-    ),
-  },
-  {
-    name: "Sanay Tyagi",
-    initials: "ST",
-    role: "Financial Lead & Documentation Manager",
-    desc: (
-      <>
-        Manages the team&apos;s <strong className="text-blue font-semibold">budget</strong> and tracks expenditures across all hardware and materials. Owns all{" "}
-        <strong className="text-blue font-semibold">project documentation</strong> — technical records, write-ups, and submission materials for FDR.
-      </>
-    ),
-  },
-  {
-    name: "Advay Singi",
-    initials: "AS",
-    role: "Operations Lead",
-    desc: (
-      <>
-        Oversees day-to-day <strong className="text-blue font-semibold">project operations</strong> — coordinating schedules, managing team workflows, and keeping milestones on track. Leads{" "}
-        <strong className="text-blue font-semibold">integration testing</strong> and deployment protocols across all subsystems.
-      </>
-    ),
-  },
-  {
-    name: "Arun Rebbapragada",
-    initials: "AR",
-    role: "Hardware Lead",
-    desc: (
-      <>
-        Owns the full <strong className="text-blue font-semibold">hardware stack</strong> across all four rovers —{" "}
-        <strong className="text-blue font-semibold">electronics integration</strong>, motor systems, wiring harnesses, and physical assembly. Leads hands-on fabrication and hardware-level troubleshooting.
-      </>
-    ),
-  },
+// Listed alphabetically by last name.
+const members: { name: string; initials: string; role?: string; desc?: React.ReactNode }[] = [
+  { name: "Bala Bhimavarapu", initials: "BB" },
+  { name: "Arnav Sangle", initials: "AS" },
+  { name: "Suvan Santoshkumar", initials: "SS" },
+  { name: "Advik Singi", initials: "AS" },
+  { name: "Megan Wilhite", initials: "MW" },
 ];
 
 export default function TeamPage() {
@@ -107,7 +56,7 @@ export default function TeamPage() {
         <div className="grid sm:grid-cols-2 gap-5 mb-16">
           {members.map((member, i) => (
             <FadeIn key={member.name} delay={i * 70}>
-              <div className="group relative card-hover flex gap-5 p-6 glass-card rounded-xl h-full overflow-hidden">
+              <div className={`group relative card-hover flex gap-5 p-6 glass-card rounded-xl h-full overflow-hidden ${member.role || member.desc ? "" : "items-center"}`}>
                 {/* Corner accents */}
                 <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-blue/30 rounded-tl-xl" />
@@ -120,8 +69,8 @@ export default function TeamPage() {
                 </div>
                 <div>
                   <p className="text-lg font-bold text-text-bright leading-tight">{member.name}</p>
-                  <p className="tech-label !text-[10px] text-blue mt-1 mb-3">{member.role}</p>
-                  <p className="text-sm text-text-muted leading-relaxed">{member.desc}</p>
+                  {member.role && <p className="tech-label !text-[10px] text-blue mt-1 mb-3">{member.role}</p>}
+                  {member.desc && <p className="text-sm text-text-muted leading-relaxed">{member.desc}</p>}
                 </div>
               </div>
             </FadeIn>
