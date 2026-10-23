@@ -346,7 +346,7 @@ export default function Home() {
 
           <FadeIn delay={80}>
             <div className="ml-11 flex flex-wrap gap-3 mb-8">
-              {["Neil Rao", "Arun Rebbapragada", "Arnav Sangle", "Sanay Tyagi", "Advay Singi"].map((name) => (
+              {["Bala Bhimavarapu", "Arnav Sangle", "Suvan Santoshkumar", "Advik Singi", "Megan Wilhite"].map((name) => (
                 <span
                   key={name}
                   className="px-4 py-2 rounded-lg glass-card text-sm font-medium text-text-bright"
